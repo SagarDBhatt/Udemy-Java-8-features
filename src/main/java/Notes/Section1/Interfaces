@@ -1,0 +1,21 @@
+**************** ONSJHJSA *****************
+
+@@@@ Interfaces @@@@
+
+--> Interfaces provide skeleton of methods i.e. just the name and return type of the methods.
+--> Any class that implements interface should define those unimplemented methods.
+
+eg.
+
+/**
+ * Created an interface with unimplemented method getInfo().
+ * Any class implements interface "details" needs to define method getInfo().
+ */
+public interface details {
+
+    public void getInfo();
+
+}
+
+
+
