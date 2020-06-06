@@ -1,0 +1,35 @@
+===== ONSJHJSA =======
+
+** STRING **
+
+--> In JAVA, Strings are immuatable i.e. One the object is created you can not change it.
+
+eg. String str = new String("Hello");       //String str = "Hello";     Another way of declaration
+
+--> Once the object "str" is created, dev can not change the value of the string.
+--> Dev can append a value but everytime a new object(reference) is created.
+
+eg. str = new String("World");      //str = "world"; Another way of declaration.
+
+--> Here, a new reference object will be created and value of "World" will be assigned.
+
+        String str = new String("Hello");
+        str.concat("World");    // str is immutable. This will generate a new object with value = "Hello World"
+
+        System.out.println(str);    //Prints "Hello" only as the String object is immutable.
+
+        // Dev can provide reference to new object.
+        str = str.concat("World");
+
+        System.out.println(str);    //Prints "Hello World"  as Dev provided the reference to the new string object.
+====================================================================================
+
+***** String Builder ******
+
+--> StringBuilder and StringBuffer are mutable String. (StringBuffer is thread safe -> Sync in Thread)
+
+        StringBuilder sb = new StringBuilder("Hello");  //Objects are mutable.
+
+        sb.append(" World");    //This will append the value in the same object.
+
+        System.out.println(sb);     //This prints "Hello World". 
