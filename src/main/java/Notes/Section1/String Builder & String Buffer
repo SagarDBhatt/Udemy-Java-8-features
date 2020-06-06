@@ -38,7 +38,12 @@ eg. str = new String("World");      //str = "world"; Another way of declaration.
 
 **** PrintF ****
 
---> Printf  :   Print Formatting
+--> Printf  :   Print Formatting.
+
+    %d : For integer. Digits
+    %s : For String.
+    %f : For Double / Float numbers. Formatting number of digits after points.
+
 
         int i = 10;
 

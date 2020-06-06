@@ -1,0 +1,27 @@
+***************** ONSJHJSA **********************
+
+$$$$ toString() $$$$$
+
+--> By default object prints object.toString() method. [toString() has return type as string].
+--> Bydefault toString() return hascode of the object.
+--> Dev can override toString() and return specific object.
+
+
+eg.
+        StringOperations object = new StringOperations();
+
+        System.out.println(object);     //This prints object hashcode. By Default printing object will print object Hashcode.
+
+        //Dev can override toString(). Here object.toString() pass the String "Value of the object" as per method definition.
+        System.out.println(object.toString());
+
+
+--> Override toString() method:
+
+       /**
+            * We can override toString method to return specific object value.
+            * @return
+            */
+           public String toString(){
+               return "Value of object";
+           }
