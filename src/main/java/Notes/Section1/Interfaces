@@ -17,5 +17,24 @@ public interface details {
 
 }
 
+public class Person implements details{
 
+    @Override
+    public void getInfo(){
+    ....
+    }
+}
+
+--> @Override : Class that implements interface should define method i.e. Override a method within the class.
+              : @Override annotation is unnecessary.
+
+
+--> Create object of interface with reference to the class implementing the interface.
+eg.
+
+    details objectInterface = new Person();
+
+    Here, Dev created object of interface "details" with reference to class "Person".
+    This "ObjectInterface" can only access the implemented method of Interface "details" inside the class "Person".
+    But the object can not access any other methods within class "Person".
 
