@@ -23,11 +23,22 @@ public class StringOperations {
 
         sb.append(" World");    //This will append the value in the same object.
 
-        System.out.println(sb);     //This prints "Hello World".
+        System.out.println(sb);     //
 
-    }
+        ////////////////////////////////////////////////////////////////////////////
+
+        int i = 10;
+
+        System.out.printf("%d\n", i);     //%d is used to print digits.
+
+        System.out.printf("%10d\n", i);   //"%10d" : 10 blank spaces in left and them print digit.
+
+        System.out.printf("%-10d\n", i);  //"%10d" : 10 blank spaces in right and them print digit.
+    
+    }//End of Main()
 
     public String sayHello(String s){
         return "This is Test method for Hello!!!" + "\n" + "Your Comments ==== " + "\t" + s;
     }
-}
+
+}//End of Class
