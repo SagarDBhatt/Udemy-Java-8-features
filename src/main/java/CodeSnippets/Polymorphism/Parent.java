@@ -17,6 +17,8 @@ public class Parent {
         Parent aParent2 = new Child();
         aParent2.getName();     //This is Child
 
+//        aParent2.getBirthday(); //Error : Object that refer to Child class can not access Child class methods.
+
 
     }
 }

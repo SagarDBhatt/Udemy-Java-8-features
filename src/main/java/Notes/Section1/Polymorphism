@@ -15,9 +15,15 @@ For Eg. We have two classes. Parent class and Child class( which extends parent 
 
 
 --> Scenario 1 : Parent class object can refer to Child class object. Object always call the method of reference class.
-                    i.e. new Child() -- Here, Child class is reference class of creating an object. 
+                    i.e. new Child() -- Here, Child class is reference class of creating an object.
 
     Parent aParent2 = new Child();
     aParent2.getName();     //This is Child
 
     ** Parent class object which refer to child class call the child class method.
+
+--> Scenario 2: Parent class object which refer to child class can not access child class methods.
+
+Eg. If child class has a method name "getBirthday()" then Parent class object can not access Child class method.
+
+    aParent2.getBirthday(); //Error : Object that refer to Child class can not access Child class methods.

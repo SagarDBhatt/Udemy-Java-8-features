@@ -6,4 +6,8 @@ public class Child extends Parent {
     public void getName(){
         System.out.println("This is Child");
     }
+
+    public void getBirthday(){
+        System.out.println("Child Birthday");
+    }
 }
