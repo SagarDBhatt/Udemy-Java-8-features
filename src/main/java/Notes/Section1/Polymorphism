@@ -1,0 +1,23 @@
+****************** ONSJHJSA *******************
+
+** Polymorphism : It means object can have more than one form. It usually occur when Parent class object is used to refer child class.
+
+For Eg. We have two classes. Parent class and Child class( which extends parent class).
+--> Both classes have method "getName()". Child class @Override this method.
+
+--> Create object of both the classes.
+
+    Parent aParent = new Parent();
+    Child aChild = new Child();
+
+    aParent.getName();      //This is Parent
+    aChild.getName();       //This is Child
+
+
+--> Scenario 1 : Parent class object can refer to Child class object. Object always call the method of reference class.
+                    i.e. new Child() -- Here, Child class is reference class of creating an object. 
+
+    Parent aParent2 = new Child();
+    aParent2.getName();     //This is Child
+
+    ** Parent class object which refer to child class call the child class method.
