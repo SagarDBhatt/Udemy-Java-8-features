@@ -2,6 +2,11 @@ package CodeSnippets.Polymorphism;
 
 public class Parent {
 
+    static {
+        System.out.println("This is static block. This block executes before 'main' method executes.");
+    }
+
+
     public void getName(){
         System.out.println("This is Parent");
     }
