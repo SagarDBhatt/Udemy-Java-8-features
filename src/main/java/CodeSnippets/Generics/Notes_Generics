@@ -5,10 +5,32 @@
     for eg: Dev can create a common method to sort the values in array. Dev needs to pass datatype as an argument to define
     Arraytype - String, Integer, Double ect.
 
+    --> Create a method "ShowValue()" which takes Array type arguments and print the values.
+     /**
+         * This method is using Generics <T> to pass the datatype as an argument.
+         * <T> : is used to mention that the method is using generics.
+         * T[] t : This arguments shows that we need to provide Array datatype at the time of calling this method.
+         * @param t
+         * @param <T>
+         */
+        public <T> void showValues( T[] t) {
+            for(T input : t){
+                System.out.println("Values = "+ input);
+            }
+        }
 
+     --> Dev needs to provide Array type argument when calling this method.
+     --> Let's create two Array of type Integer and String.
 
+            Integer[] intArray = {1,2,3,4,5};
+            String[] strArray = {"a","b","c","d"};
 
+     --> When Dev pass intArray method will show intArray elements.
+                    //Dev provide Integer type array to call the method "showValue()"
+                    object.showValues(intArray);
 
+     --> Dev can use the same method and pass String Array to show String type elements. 
+                    object.strArray();
 
 
 
