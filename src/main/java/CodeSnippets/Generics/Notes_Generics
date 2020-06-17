@@ -29,10 +29,31 @@
                     //Dev provide Integer type array to call the method "showValue()"
                     object.showValues(intArray);
 
-     --> Dev can use the same method and pass String Array to show String type elements. 
+     --> Dev can use the same method and pass String Array to show String type elements.
                     object.strArray();
 
 
+** Dev can use user defined class to pass as an parameter.
 
-    --> Dev can use user defined class to pass as an parameter.
 
+    /**
+     * This Generic method is used to show object value based on the object passed in argument.
+     * @param t
+     * @param <T>
+     */
+    public <T> void showObject (T t){
+        System.out.println("Object is = " + t.toString());
+    }
+
+    --> To call this method:
+
+    // Passing object of class Generic object, class User and Class mentor to call the same method.
+            object.showObject(new GenericsDemo());
+            object.showObject(new user());
+            object.showObject(new mentor());
+
+
+    O/P::
+        Object is = CodeSnippets.Generics.GenericsDemo@7b23ec81
+        Object is = CodeSnippets.Generics.user@5f184fc6
+        Object is = CodeSnippets.Generics.mentor@5b480cf9
