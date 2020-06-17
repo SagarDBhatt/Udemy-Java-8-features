@@ -1,0 +1,16 @@
+******************** ONSJHJSA ***********************
+
+** Generics:
+    --> Java Generics helps to re-use the same java code with different data types.
+    for eg: Dev can create a common method to sort the values in array. Dev needs to pass datatype as an argument to define
+    Arraytype - String, Integer, Double ect.
+
+
+
+
+
+
+
+
+    --> Dev can use user defined class to pass as an parameter.
+
