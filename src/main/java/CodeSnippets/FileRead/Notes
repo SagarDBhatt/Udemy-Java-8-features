@@ -6,5 +6,19 @@
 --> Dev created a file name "ReaderFile" in the project structure.
 
 Step    1: Create a String var with the address of the file (Oprional)
+            String fileName = "C:\\Personal Projects\\Certifications\\Udemy\\Java 8 Concepts\\src\\main\\java\\CodeSnippets\\FileRead\\ReaderFile";
+
         2: Create a File Object with File location as a parameter.
-         
+            File fileObject = new File(fileName);
+
+            OR File fileObject = new File("C:\\File\\Location");
+
+        3: Create Scanner Object. In parameter pass the "fileObject". [Do not pass System.in as we are not reading anything from user].
+             Scanner scan = new Scanner(fileObject);
+
+        4. While Scanner object can scan lines, print them.
+
+            while(scan.hasNextLine()){
+                    String lineRead = scan.nextLine();
+                    System.out.println(lineRead);
+                }
