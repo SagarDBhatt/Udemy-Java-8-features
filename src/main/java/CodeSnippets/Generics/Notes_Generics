@@ -81,6 +81,7 @@
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ** Wild Card Character in Generics:
+        --> Refer the link for theory: https://www.geeksforgeeks.org/wildcards-in-java/
 
 --> Dev created two class Machine and Camera. Both class override toString() method.
 --> Dev created a method in a main class which get Class object as an argument.
@@ -94,4 +95,6 @@
             System.out.println("Object of class -- " + t);
         }
 
---> Dev can pass object of any class to call the same method. 
+--> Dev can pass object of any class to call the same method.
+
+** ArrayList
