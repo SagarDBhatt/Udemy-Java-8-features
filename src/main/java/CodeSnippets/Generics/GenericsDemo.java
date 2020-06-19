@@ -44,6 +44,11 @@ public class GenericsDemo {
         System.out.println("Object is = " + t.toString());
     }
 
+    @Override
+    public String toString(){
+        return "This is ToString() for class Generics Demo";
+    }
+
 }//END OF CLASS
 
 class user{
