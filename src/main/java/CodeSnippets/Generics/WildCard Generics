@@ -1,0 +1,42 @@
+******************************** ONSJHJSA ***************************************
+*********************************************************************************
+
+Refer the theory of Wild card character, Upper bounded Wildcards and Lower bounded Wild cards:
+    https://www.geeksforgeeks.org/wildcards-in-java/
+
+**** Dev created two collection classes with Integer and Double type resp.
+
+    //Integer type collection class
+            List<Integer> listInteger = new ArrayList<Integer>();
+            listInteger.add(1);
+            listInteger.add(2);
+            listInteger.add(3);
+
+    //Double type collection class with initializing the value.
+            List<Double> listDouble = Arrays.asList(5.0, 6.0, 7.0);
+
+----> Without Generic we need to separate methods to print objects of Integer and Double class elements.
+
+    public static void printInteger(List<Integer> intList){
+        for(Integer a : intList){
+            System.out.println(" Objects === " + a);
+        }
+    }
+
+    public static void printDouble(List<Double> doublesList){
+        for(Double a : doublesList){
+            System.out.println(" Objects === " + a);
+        }
+    }
+
+----> Dev can create a single generic method using wild Card to print object of either Interger or Double class.
+
+        public static void printGeneric (List<?> Genericlist){
+            for(Object a : Genericlist){
+                System.out.println("Objects == " + a);
+            }
+        }
+
+    --> Here, "?" is used as a WildCard Character for "Unknown Type" So we can pass any class type to call this method.
+    --> When use Generic, we need to use "Object" in advanced For loop as Dev does not know which datatype will pass to
+        call method. (Object is by default super class of all the classes in Java)
