@@ -12,6 +12,11 @@ public class WildCardCharacterInGenerics {
 
     }//end of main()
 
+    /**
+     * This Generic method take object of the class and print the object address. We can pass object of class Machine OR class Camera.
+     * @param t
+     * @param <T>
+     */
     public <T> void getObject(T t){
         System.out.println("Object of class -- " + t);
     }
