@@ -97,4 +97,49 @@
 
 --> Dev can pass object of any class to call the same method.
 
-** ArrayList
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+** Collection class initialization:
+
+     /**
+             * Different Ways of initializing Collection class.
+             */
+            //Simple way of initializing Collection class.
+            List list2 = new ArrayList();
+
+            list2.add(10);
+            list2.add(20);
+            list2.add("Yes");
+            list2.add("No");
+
+            //This is Generic initialization of Interger class. Dev can manually add the value in collection class object.
+            List<Integer> list1 = new ArrayList<Integer>();
+
+            list1.add(1);
+            list1.add(2);
+            list1.add(3);
+
+            //Another way of initializing value in Collection class.
+            List list3 = Arrays.asList(4,5,6,"A","B","C");
+
+
+**** Dev created a method to list all the elemetns of collection class.
+
+
+    /**
+     * This method is used to print all the elements of list class. List class can have Integer, String, Doubel ect values
+     * stored in a Collection class object (list).  [Dev provide "Static" keyword for this method. No object required to call this methos ]
+     * @param list
+     */
+    public static void printListObjects(List list){
+        System.out.println("List of objecst :: ");
+
+        for(Object a:list){
+            System.out.println(a);
+        }
+    }
+
+----> Now, Dev created a generic method to list all the elements of Integer, String, Double ect type collection class using
+      wildcard "?" character.
+
