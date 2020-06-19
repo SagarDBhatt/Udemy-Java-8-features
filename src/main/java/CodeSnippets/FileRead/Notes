@@ -1,0 +1,10 @@
+***************************** ONSJHJSA *********************************
+************************************************************************
+
+**** Read a File.
+
+--> Dev created a file name "ReaderFile" in the project structure.
+
+Step    1: Create a String var with the address of the file (Oprional)
+        2: Create a File Object with File location as a parameter.
+         
