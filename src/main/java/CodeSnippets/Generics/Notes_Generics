@@ -82,3 +82,4 @@
 
 ** Wild Card Character in Generics:
 
+--> Dev created two class Machine and Camera. Both class override toString() method 
