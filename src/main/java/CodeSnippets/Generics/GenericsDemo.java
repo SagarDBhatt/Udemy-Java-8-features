@@ -18,8 +18,8 @@ public class GenericsDemo {
 
         // Passing object of class Generic object, class User and Class mentor to call the same method.
         object.showObject(new GenericsDemo());
-        object.showObject(new user());
-        object.showObject(new mentor());
+        object.showObject(new User());
+        object.showObject(new Mentor());
     }
 
     /**
@@ -51,10 +51,16 @@ public class GenericsDemo {
 
 }//END OF CLASS
 
-class user{
-
+class User{
+    @Override
+    public String toString() {
+        return "This is toString method in User Class";
+    }
 }
 
-class mentor{
-
+class Mentor{
+    @Override
+    public String toString() {
+        return "This is ToString method in Mentor class";
+    }
 }

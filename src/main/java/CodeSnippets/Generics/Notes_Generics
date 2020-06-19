@@ -75,4 +75,10 @@
             }
 
      Now, if Dev calls "object.showObject(new GenericsDemo());" method then output would be
-        "This is ToString() for class Generics Demo"
+        "This is ToString() for class Generics Demo".
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+** Wild Card Character in Generics:
+
