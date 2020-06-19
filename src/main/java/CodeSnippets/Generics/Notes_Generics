@@ -57,3 +57,22 @@
         Object is = CodeSnippets.Generics.GenericsDemo@7b23ec81
         Object is = CodeSnippets.Generics.user@5f184fc6
         Object is = CodeSnippets.Generics.mentor@5b480cf9
+
+** Object address: Whenever dev print the object, it prints object address (file structure -> Class -> Object address)
+
+    --> Actually, when dev prints object, it calls toString() method.
+    --> Each class in Java inherits / extends "Object" class by default. Object class has "toString()" method.
+        So when Dev prints object, it calls the toString() method of "Object class (super)" and prints object address.
+
+    --> Dev can Override the toString() method to provide any details at the time of printing object.
+
+    For Eg: Dev generated and override toString() method for class GenericsDemo.
+        [@Override annotation is required as toString() is Object class method which is Super class of all classes]
+
+        @Override
+            public String toString(){
+                return "This is ToString() for class Generics Demo";
+            }
+
+     Now, if Dev calls "object.showObject(new GenericsDemo());" method then output would be
+        "This is ToString() for class Generics Demo"
