@@ -6,3 +6,20 @@
 --> JAVA asked Dev to validate specific code for an error. For eg. To read a file, there might be high chances of file can not be found.
 --> In this scenarios, JAVA forced Dev to validate the code with Exception.
 --> Code execution catch the exception, and Dev can redirect the execution to another code rather than sending an error.
+
+**** Type of catching / throwing exception.
+
+1 -> Dev can throw Exception at the method signature.
+         public static void main(String[] args) throws FileNotFoundException{
+         
+         }
+
+2 -> Dev can surround the code with try & catch block.
+                try{
+                    //Reading a file should check the "File not found" exception.
+                    FileReader fr = new FileReader(new File("C://test.txt"));
+                }
+
+                catch (FileNotFoundException e){
+                    System.out.println("File not found!");
+                }
