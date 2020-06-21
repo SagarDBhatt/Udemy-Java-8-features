@@ -1,0 +1,8 @@
+*************** ONSJHJSA *********************
+**********************************************
+
+**** Exception:
+
+--> JAVA asked Dev to validate specific code for an error. For eg. To read a file, there might be high chances of file can not be found.
+--> In this scenarios, JAVA forced Dev to validate the code with Exception.
+--> Code execution catch the exception, and Dev can redirect the execution to another code rather than sending an error.
