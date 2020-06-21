@@ -11,7 +11,7 @@
 
 1 -> Dev can throw Exception at the method signature.
          public static void main(String[] args) throws FileNotFoundException{
-         
+
          }
 
 2 -> Dev can surround the code with try & catch block.
@@ -23,3 +23,18 @@
                 catch (FileNotFoundException e){
                     System.out.println("File not found!");
                 }
+
+**************************************************
+
+**** Throwing Exception from a method:
+
+--> Dev can throw specific exception in a method. So at the time of using that method Dev needs to catch the exception.
+for eg: "readFile()" method throws FileNotFoundException.
+
+    public static void readFile() throws FileNotFoundException{
+        File file = new File("text.txt");
+        FileReader fr = new FileReader(file);
+    }
+
+--> Dev needs to catch FileNotFoundException at the time of calling the method. 
+
