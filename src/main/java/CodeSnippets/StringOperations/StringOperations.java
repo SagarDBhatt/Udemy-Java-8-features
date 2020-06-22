@@ -1,4 +1,4 @@
-package CodeSnippets;
+package CodeSnippets.StringOperations;
 
 public class StringOperations {
 

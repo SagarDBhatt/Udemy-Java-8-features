@@ -1,4 +1,4 @@
-package CodeSnippets;
+package CodeSnippets.StringOperations;
 
 /**
  * Created an interface with unimplemented method getInfo().

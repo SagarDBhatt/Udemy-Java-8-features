@@ -1,0 +1,16 @@
+********************** ONSJHJSA *************************************
+*********************************************************************
+
+**** ABSTRACT Class
+
+--> A class which has one or more abstract method is called Abstract class.
+--> An abstract class can not be initiated i.e. Dev can not create an object of abstract class.
+--> An abstract method is the method without any implementation.
+
+--> Abstract class forces child class to implement all the abstract methods.
+ [child class may or may not defined abstract methods. If Child class does not want to define abstract method
+ then child class needs to declare as an Abstract class]
+
+**** Link of Oracle Doc : Detailed Explanation of Abstract class
+https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html#:~:text=An%20abstract%20class%20is%20a,but%20they%20can%20be%20subclassed.&text=When%20an%20abstract%20class%20is,methods%20in%20its%20parent%20class.
+
