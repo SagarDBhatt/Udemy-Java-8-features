@@ -3,6 +3,12 @@
 
 **** Exception:
 
+--> There are two types of Exception
+    1 -> Checked Exception
+    2 -> Runtime Excetion
+
+ [1] Checked Exception: are the one in which Java forced us to throw and catch excetions.
+
 --> JAVA asked Dev to validate specific code for an error. For eg. To read a file, there might be high chances of file can not be found.
 --> In this scenarios, JAVA forced Dev to validate the code with Exception.
 --> Code execution catch the exception, and Dev can redirect the execution to another code rather than sending an error.
@@ -36,5 +42,55 @@ for eg: "readFile()" method throws FileNotFoundException.
         FileReader fr = new FileReader(file);
     }
 
---> Dev needs to catch FileNotFoundException at the time of calling the method. 
+--> Dev needs to catch FileNotFoundException at the time of calling the method.
+
+**************************************************
+
+[2] Runtime Exceptions: are the one which needs to catch at the run time.
+
+For eg:
+    Division by "0" exception occur at run time. We are not forced to check the exception for division operation but at the time of
+    divison if we pass "0" as divisor then we need to check run time exception.
+
+
+--> Dev can throw exception within the method which needs to catch at the time of calling the method.
+For Eg: "runTimeException()" method throw exception. Dev has to catch a thrown exception at the time of calling the method.
+
+     public static void runTimeExceptin(){
+            int a = 1;
+            System.out.println(a/0);
+            throw new RuntimeException();
+        }
+
+*******************************************************
+
+**** EXCEPTION HIERARCHY:
+
+--> Exception class has hierarchy of subclass. Exception Class is the main Parent class. IOException is subclass of Exception.
+FileNotFoundException is subclass of IOException.
+
+For eg: Exception class -> IOException -> FileNotFoundException.
+
+--> A method which throws multiple Exception and require multiple catch block then catch order needs to maintain.
+
+For Eg: This method throws FileNotFoundException and IOException. In try catch block, first Dev needs to catch FileNotFound Exception
+and then IOException.
+
+    public static void multipleException() throws IOException  {
+        File fl = new File("null");
+        FileReader fr = new FileReader(fl);
+        throw new FileNotFoundException();
+    }
+
+--> Dev is using multiple try/catch block for Exceptions. Here, First Dev needs to catch child class Exception (FileNotFound) and then Immediate parent class Exception (IOException)
+
+        try {
+            multipleException();
+        }
+        catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
 
