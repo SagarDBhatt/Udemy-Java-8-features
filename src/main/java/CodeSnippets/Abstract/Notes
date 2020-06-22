@@ -14,3 +14,11 @@
 **** Link of Oracle Doc : Detailed Explanation of Abstract class
 https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html#:~:text=An%20abstract%20class%20is%20a,but%20they%20can%20be%20subclassed.&text=When%20an%20abstract%20class%20is,methods%20in%20its%20parent%20class.
 
+--> Abstract class and Interface have simillar concept of providing list of unimplemented methods. Any class that extends / implements
+abstract class or interface has to define those unimplemented method.
+
+--> By default, interface methods are public. Whereas methods in Abstract class can be public or protected
+    (Not private as Private methods can not be overriden in child class).
+
+--> Java does not support multiple inheritence. So a class can extends (inherits) a single class Whereas a class can implemets
+    multiple interfaces.
