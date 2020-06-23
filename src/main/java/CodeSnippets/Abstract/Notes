@@ -18,7 +18,7 @@ https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html#:~:text=An%20ab
 abstract class or interface has to define those unimplemented method.
 
 --> By default, interface methods are public. Whereas methods in Abstract class can be public or protected
-    (Not private as Private methods can not be overriden in child class).
+    (Not private as Private methods can not be overridden in child class).
 
 --> Java does not support multiple inheritence. So a class can extends (inherits) a single class Whereas a class can implemets
     multiple interfaces.

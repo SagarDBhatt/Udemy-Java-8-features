@@ -10,4 +10,9 @@ public class Child extends AbstractDemo {
     public void showMessage() {
         System.out.println("This is Child class,");
     }
+
+    @Override
+    protected void showAge() {
+        System.out.println("Age in child class");
+    }
 }
