@@ -1,0 +1,10 @@
+******************* ONSJHJSA *********************
+**************************************************
+
+**** Annonymous class:
+
+--> It is an inner class without any name (Dev can use any name) which can create only one Object of that class.
+--> Many time we need a class to implement methods just once. In that case, Dev does not need to create a separate class,
+initialize an object and call method.
+
+For eg:
