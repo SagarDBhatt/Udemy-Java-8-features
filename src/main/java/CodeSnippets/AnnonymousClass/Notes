@@ -7,4 +7,24 @@
 --> Many time we need a class to implement methods just once. In that case, Dev does not need to create a separate class,
 initialize an object and call method.
 
-For eg:
+For eg: Test class has a method "message".
+
+public class Test {
+
+    public void message(){
+        System.out.println("Inside Test class");
+    }
+}
+
+--> Now, lets create inner annonymous class and override "message" method. Object of this annonymous class calls
+overriden "message()" method.
+
+// Now, create an annonymous class and override method message(). Object of an annonymous class access the overriden "message()" method.
+        Test obj = new Test(){
+            @Override
+            public void message(){
+                System.out.println("Inside inner annonymous class");
+            }
+        };
+        obj.message();  // O/p: Inside inner annonymous class.
+        
