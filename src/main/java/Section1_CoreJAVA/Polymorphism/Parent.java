@@ -7,7 +7,7 @@ public class Parent {
     }
 
 
-    public void getName(){
+    public void getName() {
         System.out.println("This is Parent");
     }
 

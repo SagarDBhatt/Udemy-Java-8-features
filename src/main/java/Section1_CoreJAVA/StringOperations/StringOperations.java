@@ -35,7 +35,7 @@ public class StringOperations {
 
         System.out.printf("%-10d\n", i);  //"%10d" : 10 blank spaces in right and them print digit.
 
-        System.out.printf("%s\n","This is String");
+        System.out.printf("%s\n", "This is String");
 
 
         System.out.printf("%f\n", 2.4);       // 2.400000. Default 6 places decimal points
@@ -47,7 +47,7 @@ public class StringOperations {
         StringOperations object = new StringOperations();
 
         System.out.println(object);     //This prints object hashcode. By Default printing object will print object.toString().
-                                        // If not defined then by default toString() return Hashcode.
+        // If not defined then by default toString() return Hashcode.
 
         //Dev can override toString(). Here object.toString() pass the String "Value of the object" as per method definition.
         System.out.println(object.toString());
@@ -56,14 +56,15 @@ public class StringOperations {
 
     /**
      * We can override toString method to return specific object value.
+     *
      * @return
      */
-    public String toString(){
+    public String toString() {
         return "Value of object";
     }
 
 
-    public String sayHello(String s){
+    public String sayHello(String s) {
         return "This is Test method for Hello!!!" + "\n" + "Your Comments ==== " + "\t" + s;
     }
 

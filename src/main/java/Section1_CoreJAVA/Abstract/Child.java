@@ -6,6 +6,7 @@ public class Child extends AbstractDemo {
         Child object = new Child();
         object.showMessage();
     }
+
     @Override
     public void showMessage() {
         System.out.println("This is Child class,");

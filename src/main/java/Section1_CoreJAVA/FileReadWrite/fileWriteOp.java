@@ -1,5 +1,6 @@
 package Section1_CoreJAVA.FileReadWrite;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -7,15 +8,27 @@ import java.io.IOException;
 public class fileWriteOp {
 
     public static void main(String[] args) {
-
+        fileWriter();
     }
 
-    public static void fileWriter(){
+    public static void fileWriter() {
 
-        try(FileWriter fw = new FileWriter(new File("FileWriter.txt"))){
+        try (FileWriter fw = new FileWriter(new File("FileWriter.txt"))) {
 
-        }
-        catch (IOException e) {
+            BufferedWriter bw = new BufferedWriter(fw);
+            String arg = "This is String";
+            bw.write("ONSJHJSA");
+            bw.newLine();
+            bw.write(arg);
+            bw.newLine();
+            bw.write("String entry in the File for Buffered Writer");
+            bw.write(1);
+            bw.write(4);
+
+            bw.close();
+
+            System.out.println("File Write Successfully!!!");
+        } catch (IOException e) {
             e.printStackTrace();
         }
 

@@ -17,45 +17,41 @@ public class ExceptionClass {
         catch (FileNotFoundException e){
             System.out.println("File not found!");
         }*/
-        try{
+        try {
             readFile();
-        }
-        catch (FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             System.out.println("File not found");
         }
 
-        try{
+        try {
             runTimeExceptin();
-        }
-        catch (RuntimeException e){
+        } catch (RuntimeException e) {
             System.out.println("Runtime Exception == " + e.toString());
         }
 
         try {
             multipleException();
-        }
-        catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
-        }
-        catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
     }//End of main()
 
-    public static void readFile() throws FileNotFoundException{
+    public static void readFile() throws FileNotFoundException {
         File file = new File("text.txt");
         FileReader fr = new FileReader(file);
         //throw new FileNotFoundException();
     }
 
-    public static void runTimeExceptin(){
+    public static void runTimeExceptin() {
         int a = 1;
-        System.out.println(a/0);
+        System.out.println(a / 0);
         throw new RuntimeException();
     }
 
-    public static void multipleException() throws IOException  {
+    public static void multipleException() throws IOException {
         File fl = new File("null");
         FileReader fr = new FileReader(fl);
         throw new FileNotFoundException();

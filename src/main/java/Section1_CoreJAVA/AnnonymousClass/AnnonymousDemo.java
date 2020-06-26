@@ -8,16 +8,16 @@ public class AnnonymousDemo {
         obj1.showMessage();
 
         // Now, create an annonymous class and override method message(). Object of an annonymous class access the overriden "message()" method.
-        Test obj = new Test(){
+        Test obj = new Test() {
             @Override
-            public void message(){
+            public void message() {
                 System.out.println("Inside inner annonymous class");
             }
         };
         obj.message();
     }
 
-    public void showMessage(){
+    public void showMessage() {
         System.out.println("Shwoing Message");
     }
 }

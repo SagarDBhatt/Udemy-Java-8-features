@@ -24,20 +24,20 @@ public class WildCardInGeneric {
 
     }//end of main()
 
-    public static void printInteger(List<Integer> intList){
-        for(Integer a : intList){
+    public static void printInteger(List<Integer> intList) {
+        for (Integer a : intList) {
             System.out.println(" Objects === " + a);
         }
     }
 
-    public static void printDouble(List<Double> doublesList){
-        for(Double a : doublesList){
+    public static void printDouble(List<Double> doublesList) {
+        for (Double a : doublesList) {
             System.out.println(" Objects === " + a);
         }
     }
 
-    public static void printGeneric (List<?> Genericlist){
-        for(Object a : Genericlist){
+    public static void printGeneric(List<?> Genericlist) {
+        for (Object a : Genericlist) {
             System.out.println("Objects == " + a);
         }
     }

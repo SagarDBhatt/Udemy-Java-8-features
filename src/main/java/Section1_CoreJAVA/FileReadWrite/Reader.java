@@ -16,22 +16,20 @@ public class Reader {
             System.out.println(lineRead);
         }*/
 
-    //Reading File line by line using "Buffer Reader"
+        //Reading File line by line using "Buffer Reader"
 
-        try{
+        try {
             FileReader fr = new FileReader(new File(fileName));
             BufferedReader br = new BufferedReader(fr);
             String read = null;
 
-            while(( read = br.readLine()) != null){
+            while ((read = br.readLine()) != null) {
                 System.out.println("Read lines === ");
                 System.out.println(read);
             }
-        }
-        catch (IOException ex){
+        } catch (IOException ex) {
             System.out.println("Unable to reaD file " + ex);
         }
-
 
 
     }//End of main
