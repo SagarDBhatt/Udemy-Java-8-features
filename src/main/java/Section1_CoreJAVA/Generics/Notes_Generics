@@ -54,9 +54,9 @@
 
 
     O/P::
-        Object is = CodeSnippets.Generics.GenericsDemo@7b23ec81
-        Object is = CodeSnippets.Generics.user@5f184fc6
-        Object is = CodeSnippets.Generics.mentor@5b480cf9
+        Object is = Section1_CoreJAVA.Generics.GenericsDemo@7b23ec81
+        Object is = Section1_CoreJAVA.Generics.user@5f184fc6
+        Object is = Section1_CoreJAVA.Generics.mentor@5b480cf9
 
 ** Object address: Whenever dev print the object, it prints object address (file structure -> Class -> Object address)
 

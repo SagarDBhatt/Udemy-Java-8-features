@@ -1,4 +1,4 @@
-package CodeSnippets.Recursion;
+package Section1_CoreJAVA.Recursion;
 
 public class Factorial {
 

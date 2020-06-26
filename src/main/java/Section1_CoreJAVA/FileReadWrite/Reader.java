@@ -1,7 +1,6 @@
-package CodeSnippets.FileRead;
+package Section1_CoreJAVA.FileReadWrite;
 
 import java.io.*;
-import java.util.Scanner;
 
 public class Reader {
     public static void main(String[] args) throws FileNotFoundException {

@@ -1,4 +1,4 @@
-package CodeSnippets.AnnonymousClass;
+package Section1_CoreJAVA.AnnonymousClass;
 
 public class Test {
 

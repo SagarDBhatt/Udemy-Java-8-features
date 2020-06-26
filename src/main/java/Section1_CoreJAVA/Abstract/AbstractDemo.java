@@ -1,4 +1,4 @@
-package CodeSnippets.Abstract;
+package Section1_CoreJAVA.Abstract;
 
 public abstract class AbstractDemo {
 

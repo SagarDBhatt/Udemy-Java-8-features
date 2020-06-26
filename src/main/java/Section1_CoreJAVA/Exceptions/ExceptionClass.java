@@ -1,4 +1,4 @@
-package CodeSnippets.Exceptions;
+package Section1_CoreJAVA.Exceptions;
 
 import java.io.File;
 import java.io.FileNotFoundException;

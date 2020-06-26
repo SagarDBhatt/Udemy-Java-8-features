@@ -1,4 +1,4 @@
-package CodeSnippets.StringOperations;
+package Section1_CoreJAVA.StringOperations;
 
 /**
  * Created an interface with unimplemented method getInfo().

@@ -1,4 +1,4 @@
-package CodeSnippets.Polymorphism;
+package Section1_CoreJAVA.Polymorphism;
 
 public class Child extends Parent {
 

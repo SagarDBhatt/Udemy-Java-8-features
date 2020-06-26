@@ -1,0 +1,29 @@
+****************************************
+                ONSJHJSA
+****************************************
+
+**** Try with Resources:
+
+--> It published in JAVA 7.
+--> Normally, certain method forced Dev to handle Exception which is called "Checked Exception". For Eg. FileNotFound Exception OR IOException.
+        --> Ususally, Dev needs to surround the code with try and catch block.
+
+--> Another variation of Try & catch block is "Try with Resources".
+        --> Normally, when Dev create object of FileReader OR FileWriter, these object needs to close at the end of the operation. (Good Coding Practice)
+        For Eg:
+                FileReader fr = new FileReader(new File("Test.txt"));
+                ------ Some code
+                ------
+                 fr.close();    //This is good coding practice to release the resource memory. If we do not then warning message appear as "Resource leak"
+
+--> Advantage of using "Try with Resources" is, Dev does not need to close the object which created within try block.
+        For Eg:
+
+                try(FileReader fr = new FileReader(new File("Test.txt")) {
+
+                ---------
+                --------- some code     //Here, Dev does not need to close FileReader Resource. i.e. Eliminate "fr.close()".
+                }
+                catch(Exception e){
+                    e.printStackTrace();
+                }

@@ -1,4 +1,4 @@
-package CodeSnippets.Generics;
+package Section1_CoreJAVA.Generics;
 
 import java.util.ArrayList;
 import java.util.Arrays;

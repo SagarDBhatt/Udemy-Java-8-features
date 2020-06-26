@@ -6,7 +6,7 @@
 --> Dev created a file name "ReaderFile" in the project structure.
 
 Step    1: Create a String var with the address of the file (Oprional)
-            String fileName = "C:\\Personal Projects\\Certifications\\Udemy\\Java 8 Concepts\\src\\main\\java\\CodeSnippets\\FileRead\\ReaderFile";
+            String fileName = "C:\\Personal Projects\\Certifications\\Udemy\\Java 8 Concepts\\src\\main\\java\\Section1_CoreJAVA\\FileRead\\ReaderFile";
 
         2: Create a File Object with File location as a parameter.
             File fileObject = new File(fileName);

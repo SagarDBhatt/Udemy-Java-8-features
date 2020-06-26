@@ -1,4 +1,4 @@
-package CodeSnippets.StringOperations;
+package Section1_CoreJAVA.StringOperations;
 
 public class StringOperations {
 
