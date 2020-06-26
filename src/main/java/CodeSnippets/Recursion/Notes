@@ -1,0 +1,19 @@
+*************************************************
+                    ONSJHJSA
+*************************************************
+
+**** Recursion:
+--> A method calling itself continuously is called Recursive method and this process is called Recursive process.
+--> Code in Recursive method is compact but it is complex to understand.
+
+For Eg:
+--> Method keep calling itself to calculate the factorial.
+
+public static int factOfN(int n){
+        if(n>1){
+            int fact = n * factOfN(n-1);
+            return fact;
+        }
+        else
+            return 1;
+    }
