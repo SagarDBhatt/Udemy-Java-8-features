@@ -1,9 +1,18 @@
 package CodeSnippets.Recursion;
 
 public class Factorial {
-    public static void main(String[] args) {
 
+    static {
+        System.out.println("Static Block");
+    }
+    static int n1=0, n2=1, n3=0;
+
+    public static void main(String[] args) {
         System.out.println("Factorial of 5 = " + factOfN(5));
+
+        System.out.print(n1 + " " + n2 + " ");
+        fibonaci(5);
+
     }///end of main
 
     public static int factOfN(int n){
@@ -13,5 +22,18 @@ public class Factorial {
         }
         else
             return 1;
+    }
+
+    public static void fibonaci(int terms){
+
+        if (terms > 0){
+            n3 = n1 + n2;
+            n1=n2;
+            n2=n3;
+           // terms--;
+            System.out.print(n3 + " ");
+            fibonaci(terms - 1);
+        }
+
     }
 }
