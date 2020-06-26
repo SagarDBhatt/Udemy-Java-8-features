@@ -25,7 +25,7 @@ public class fileWriteOp {
             bw.write(1);
             bw.write(4);
 
-            bw.close();
+            bw.close();     //Until the BW is closed, No write operation occured.
 
             System.out.println("File Write Successfully!!!");
         } catch (IOException e) {
