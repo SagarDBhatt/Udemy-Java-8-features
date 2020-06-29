@@ -32,3 +32,8 @@ For Eg:
             fout.close();
         }
 
+==> Most IMP: Dev needs to make a class as Serializable. To achieve this, class needs to implements "Serializable" interface.
+        public class Person implements Serializable{
+        .....
+        .....
+        }

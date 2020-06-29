@@ -13,8 +13,11 @@ public class SerialReadOperation {
             FileInputStream fis = new FileInputStream("SerialWriter.txt");
             ObjectInputStream objectInputStream = new ObjectInputStream(fis);
 
-            System.out.println("Objects are :: ");
-            System.out.println(objectInputStream.readObject());
+            /*System.out.println("Objects are :: ");
+            System.out.println(objectInputStream.readObject());*/
+
+            Person aPerson = (Person)objectInputStream.readObject();
+            System.out.println("Reading Object -- " + aPerson);
 
             fis.close();
             objectInputStream.close();
