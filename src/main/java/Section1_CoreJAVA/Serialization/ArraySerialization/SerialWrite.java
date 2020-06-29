@@ -13,7 +13,7 @@ public class SerialWrite {
            for(Person p : personArray){
                outputStream.writeObject(p);
            }
-           
+
            outputStream.close();
            fos.close();
        }
