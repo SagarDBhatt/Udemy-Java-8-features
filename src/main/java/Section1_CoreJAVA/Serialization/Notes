@@ -20,8 +20,6 @@ For Eg:
        = new FileWriter
        (new File("xyz.txt"))
 
-
-
     public void serialWrite(Person aPerson){
 
         try {

@@ -8,8 +8,11 @@ public class Runner {
         aPerson.setPersonAge(25);
         aPerson.setPersonId(1);
 
-        SerialWriteOperation serialWriteOperation = new SerialWriteOperation();
-        serialWriteOperation.serialWrite(aPerson);
+        /*SerialWriteOperation serialWriteOperation = new SerialWriteOperation();
+        serialWriteOperation.serialWrite(aPerson);*/
+
+        SerialReadOperation serialReadOperation = new SerialReadOperation();
+        serialReadOperation.SerialRead();
     }
 
 }
