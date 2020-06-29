@@ -4,3 +4,33 @@
 
 **** Serialization
 
+--> Converting the object into Byte Stream is Serialization. [Deserialization is converting the byte stream into actual Java object]
+--> The byte stream is platform independent. So the object serialized in one platform can be deserialized on a different platform.
+
+For Eg:
+--> Dev created a Person class with private property Id, Name and Age with Getter and Setter method.
+--> Dev created a SerialWriteObject which has a method to convert Object of class "Person" into Byte Stream.
+
+--> Serialization is simmilar to FileWriter.
+
+        FileWriter                   Serialization
+       1. FileWriter                1. FileOutputStream
+       2. BufferedWriter            2. ObjectOutputStream
+       3. FileWriter fw             3. FileOutputStream fos = new FileOutputStream(new File("xyz.txt"));
+       = new FileWriter
+       (new File("xyz.txt"))
+
+
+
+    public void serialWrite(Person aPerson){
+
+        try {
+            FileOutputStream fout = new FileOutputStream(new File("SerialWriter.txt"));
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fout);
+
+            objectOutputStream.writeObject(aPerson);
+
+            objectOutputStream.close();
+            fout.close();
+        }
+

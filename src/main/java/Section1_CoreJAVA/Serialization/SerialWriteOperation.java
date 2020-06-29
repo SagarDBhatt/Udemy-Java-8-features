@@ -21,8 +21,8 @@ public class SerialWriteOperation {
         } catch (IOException e) {
             System.out.println("Unable to generate a writable file");
             e.printStackTrace();
-        }
 
+        }
 
     }
 }
