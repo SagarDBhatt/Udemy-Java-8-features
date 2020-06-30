@@ -8,5 +8,8 @@ public class RunnerMain {
         SerialWrite writeObject = new SerialWrite();
 
         writeObject.writeArray(aPerson);
+
+        SerialRead readObject = new SerialRead();
+        readObject.read(aPerson);
     }
 }
