@@ -1,6 +1,7 @@
 package Section1_CoreJAVA.Serialization.ArraySerialization;
 
 import java.io.*;
+import java.util.ArrayList;
 
 public class SerialWrite {
 
@@ -24,6 +25,23 @@ public class SerialWrite {
            e.printStackTrace();
        }
 
-   }
+   }//End of writeArray(Person[] personArray)
+
+    public void writeArrayList(ArrayList<Person> arrayList){
+
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream(new File("ArrayListPerson.bin"));
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+
+            for(Person p : arrayList){
+                objectOutputStream.writeObject(p);
+                System.out.println("File Write Successful!!!");
+            }
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 
 }
