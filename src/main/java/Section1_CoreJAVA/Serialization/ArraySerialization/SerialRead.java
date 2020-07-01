@@ -7,16 +7,21 @@ import java.io.ObjectInputStream;
 
 public class SerialRead {
 
-    public void read(Person[] person){
+    public void read(){
 
         try {
             FileInputStream inputStream = new FileInputStream("arrayOutput.txt");
             ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
+            System.out.println("Reading Object Successfully!!!");
 
-            for(Person person1 : person){
-                System.out.println(objectInputStream.readObject());
+            Person[] aPerson1 = (Person[]) objectInputStream.readObject();
+
+            for(Person person1 : aPerson1){
+                System.out.println(person1);
             }
 
+            inputStream.close();
+            objectInputStream.close();
         }
         catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -29,6 +34,5 @@ public class SerialRead {
 /*        finally {
             inputStream.close();
         }*/
-
-    }
+    }// end of read(Person[] person)
 }

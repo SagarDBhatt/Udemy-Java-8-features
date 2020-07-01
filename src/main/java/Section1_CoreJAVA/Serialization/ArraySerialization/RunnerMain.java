@@ -13,11 +13,11 @@ public class RunnerMain {
         arraylistPerson.add(new Person(2,"B",20));
 
         SerialWrite writeObject = new SerialWrite();
-       // writeObject.writeArray(aPerson);
+       //writeObject.writeArray(aPerson);
 
-        writeObject.writeArrayList(arraylistPerson);
+       // writeObject.writeArrayList(arraylistPerson);
 
         SerialRead readObject = new SerialRead();
-        //readObject.read(aPerson);
+        readObject.read();
     }
 }
