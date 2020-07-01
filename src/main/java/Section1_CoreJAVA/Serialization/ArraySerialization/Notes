@@ -48,4 +48,4 @@ public void readArray(){
             objectInputStream.close();
         }
 
-MIMP : Here, Dev read a single object because "objectInputStream.readObject()" method can read a single object at a time.       
+MIMP : Here, Dev read a single object because "objectInputStream.readObject()" method can read a single object at a time.
