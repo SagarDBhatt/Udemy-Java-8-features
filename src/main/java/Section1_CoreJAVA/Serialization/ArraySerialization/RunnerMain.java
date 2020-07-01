@@ -1,7 +1,5 @@
 package Section1_CoreJAVA.Serialization.ArraySerialization;
 
-import Section1_CoreJAVA.Serialization.SerialReadOperation;
-
 import java.util.ArrayList;
 
 public class RunnerMain {

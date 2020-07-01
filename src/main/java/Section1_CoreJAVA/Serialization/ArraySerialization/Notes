@@ -1,0 +1,51 @@
+***************************************************************
+                          ONSJHJSA
+***************************************************************
+
+**** Serialize Array in Write and Read operation::
+
+--> Create Array of class Person. Initializa the value of the objects. Dev created three objects in the array.
+
+for eg:
+Person[] aPerson = {new Person(1,"Sam",10), new Person(2, "Ram", 20), new Person(3, "Fam",30)};
+
+--> Write Ops: Dev can write entire array of the objects into the file in one single statement.
+
+For eg:
+public void writeArray(Person[] personArray){
+
+       try {
+           FileOutputStream fos = new FileOutputStream(new File("arrayOutput.txt"));
+           ObjectOutputStream outputStream = new ObjectOutputStream(fos);
+
+           for(Person p : personArray){
+               outputStream.writeObject(p);
+               System.out.println("Write operation for Array is successful!!!");
+           }
+
+           outputStream.close();
+           fos.close();
+       }
+
+MIMP :: Here, Dev write single object at a time into the file. This is important as Searial Read can read a single object at a time.
+
+--> In Read Operation, Dev needs to read a single object of class Person at a time.
+
+For Eg:
+public void readArray(){
+
+        try {
+            FileInputStream inputStream = new FileInputStream("arrayOutput.txt");
+            ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
+            System.out.println("Reading Object Successfully!!!");
+
+            Person aPerson;
+            while((aPerson = (Person) objectInputStream.readObject()) != null){
+                System.out.println(aPerson);
+            }
+
+            inputStream.close();
+            objectInputStream.close();
+        }
+
+MIMP : Here, Dev read a single object because "objectInputStream.readObject()" method can read a single object at a time.       

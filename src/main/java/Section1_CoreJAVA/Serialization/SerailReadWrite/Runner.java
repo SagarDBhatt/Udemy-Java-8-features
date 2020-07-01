@@ -1,4 +1,4 @@
-package Section1_CoreJAVA.Serialization;
+package Section1_CoreJAVA.Serialization.SerailReadWrite;
 
 public class Runner {
 

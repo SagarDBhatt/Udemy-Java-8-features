@@ -16,6 +16,9 @@ public class SerialWrite {
                System.out.println("Write operation for Array is successful!!!");
            }
 
+          /*outputStream.writeObject(personArray);
+          System.out.println("Write operation for Array is successful!!!");
+*/
            outputStream.close();
            fos.close();
        }
