@@ -1,36 +1,41 @@
 package Section1_CoreJAVA.Serialization.ArraySerialization;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.ObjectInputStream;
+import java.io.*;
 
 public class SerialRead {
 
-    public void read(){
+    public void readArray(){
 
         try {
             FileInputStream inputStream = new FileInputStream("arrayOutput.txt");
             ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
             System.out.println("Reading Object Successfully!!!");
 
-            Person[] aPerson1 = (Person[]) objectInputStream.readObject();
-
-            for(Person person1 : aPerson1){
-                System.out.println(person1);
+            Person aPerson;
+            while((aPerson = (Person) objectInputStream.readObject()) != null){
+                System.out.println(aPerson);
             }
 
             inputStream.close();
             objectInputStream.close();
         }
         catch (FileNotFoundException e) {
-            e.printStackTrace();
+           // e.printStackTrace();
+            System.out.println("File Not Found Exception");
+        }
+        catch (EOFException e){
         }
         catch (IOException e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        }
+        catch(ClassCastException e){
+            System.out.println("Unable to cast the class Person!!");
             e.printStackTrace();
         }
+        catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
 /*        finally {
             inputStream.close();
         }*/

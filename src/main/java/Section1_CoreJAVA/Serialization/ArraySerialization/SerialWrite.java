@@ -13,6 +13,7 @@ public class SerialWrite {
 
            for(Person p : personArray){
                outputStream.writeObject(p);
+               System.out.println("Write operation for Array is successful!!!");
            }
 
            outputStream.close();
