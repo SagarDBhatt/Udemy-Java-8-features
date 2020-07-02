@@ -17,3 +17,6 @@ For Eg:
 --> Now, to delete first record. This is the most expensive (most time consuming) process.
         numbers.remove(0);
 
+--> In ArrayList, all the elements are stored in Indexed order. So when Dev removed / deleted the first element then all the other elements
+shift one index back. This shifting of all the elements consumes good amount of time.
+--> Thus, ArrayList is not suitable for Delete operation.  

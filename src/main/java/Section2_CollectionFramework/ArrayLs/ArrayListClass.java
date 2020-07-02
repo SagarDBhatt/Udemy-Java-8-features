@@ -37,8 +37,11 @@ public class ArrayListClass {
             System.out.println(a);
         }
 
-
-
-
+        //Remove an element from ArrayList.
+        numbers.remove(0);
+        System.out.println("\n After Removing the first element.");
+        for(Integer a : numbers){
+            System.out.println(a);
+        }
     }
 }
