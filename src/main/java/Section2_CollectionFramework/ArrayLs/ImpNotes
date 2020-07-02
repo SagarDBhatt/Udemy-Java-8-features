@@ -1,0 +1,19 @@
+********************************
+        ONSJHJSA
+********************************
+
+--> ArrayList is not efficient for Delete operation.
+
+For Eg:
+        //Initialize an ArrayList. Dev provided Wrapper class "Integer" to describe that the ArrayList is of type Integer.
+        ArrayList<Integer> numbers = new ArrayList<Integer>();
+
+        //Adding value to the ArrayList. Here, Size of the "numbers" is 4. (Index 0, 1, 2, 3)
+        numbers.add(5);
+        numbers.add(10);
+        numbers.add(15);
+        numbers.add(20);
+
+--> Now, to delete first record. This is the most expensive (most time consuming) process.
+        numbers.remove(0);
+

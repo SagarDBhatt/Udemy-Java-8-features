@@ -17,7 +17,7 @@ public class ReadArrayList {
             Person aPerson;
             //ArrayList<Person> arrayList = new ArrayList<>();
 
-            while((aPerson = (Person) objectInputStream.readObject())!=null){
+            while((aPerson  = (Person) objectInputStream.readObject())!=null){
                   arrayList.add(aPerson);
             }
 
@@ -35,7 +35,7 @@ public class ReadArrayList {
     public static void print(){
         for(Person p : arrayList){
             System.out.println("Person Object == " + p);
-            System.out.println("1111");
+            //System.out.println("1111");
         }
     }
 }
