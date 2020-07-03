@@ -21,8 +21,18 @@ public class LSClass {
         long start =  System.currentTimeMillis();
 
         //Adding elements at the end of the list.
-        for(int i=0;i<100000;i++){
+        /*for(int i=0;i<100000;i++){
             list.add(i);
+        }*/
+
+        //Adding elements at the beginning of the List.
+       /* for(int i=0;i<100000;i++){
+            list.add(0,i);
+        }*/
+
+       //Adding elements at the middle of the list
+        for(int i=0;i<100000;i++) {
+            list.add(list.size()/2,i);
         }
 
         long end = System.currentTimeMillis();

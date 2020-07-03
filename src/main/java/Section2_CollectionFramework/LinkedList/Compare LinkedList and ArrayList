@@ -24,3 +24,32 @@ private static void calcTimings(String type, List<Integer> list){
         System.out.println("Time taken by = " + type + " " + (end-start) + " ms");
     }
 
+Case 1: Adding elements at the end of the list.
+
+Time taken by = arrayList 6 ms
+Time taken by = LinkedList 30 ms
+
+--> Here, ArrayList is faster than LinkedList to add the elements at the end.
+
+Case 2: Adding elements at the beginning of the list.
+
+Time taken by = arrayList 4788 ms
+Time taken by = LinkedList 110 ms
+
+--> Here, ArrayList takes so much time compared with LinkedList.
+[All the elements in the ArrayList are indexed as 0,1,2 ... Now add an elements at the 0th index will push all the elements
+one index right i.e. 1 -> 2, 2 ->3 ect. This reindexing process takes time. ]
+
+Case 3: Adding elements at the middle of list.
+
+Time taken by = arrayList 2604 ms
+Time taken by = LinkedList 41774 ms
+
+--> Here, ArrayList takes significantly less time compared with LinkedList.
+
+
+**** Thus, it is concluded that
+    Add / Delete Data             List Interface
+      1. Beginning                  LinkedList
+      2. End                        ArrayList
+      3. Middle                     ArrayList.
