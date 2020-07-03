@@ -1,0 +1,21 @@
+****************************************************************
+                            ONSJHJSA
+****************************************************************
+
+**** HASHMAP:
+
+--> In ArrayList, elememts are stored as an ordered collection i.e. with an index number.
+--> In HashMap, elements are stored in <Key,Value> pairs. Here Key and Value can be of any type i.e. Integer, String, Double ect.
+
+For eg:
+Case1:
+        HashMap<String, Integer> map1 = new HashMap<String,Integer>();
+        map1.put("Key1", 1);
+
+Case2:
+        HashMap<Double, Integer> map1 = new HashMap<Double,Integer>();
+        map1.put(1.00, 1);
+
+--> To get the value from HasMap, get() is used.
+       map1.get(1.00);      //Dev needs to pass the Key value and get() return value associated with that key.
+
