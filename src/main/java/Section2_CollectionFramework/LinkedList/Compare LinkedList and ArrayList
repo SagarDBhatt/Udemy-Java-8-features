@@ -1,0 +1,26 @@
+************************************************************
+                       ONSJHJSA
+************************************************************
+
+--> ArrayList is useful when Dev needs to add/delete data at the end.
+--> Whereas LinkedList takes the nearly the same amount of time to add/delete elements at the beginning or at the middle Or at the end.
+
+--> Dev created a method to determine the time taken by List to add 100,000 records.
+For Eg:
+private static void calcTimings(String type, List<Integer> list){
+        for(int i=0;i<100000;i++){
+            list.add(i);
+        }
+
+        long start =  System.currentTimeMillis();
+
+        //Adding elements at the end of the list.
+        for(int i=0;i<100000;i++){
+            list.add(i);
+        }
+
+        long end = System.currentTimeMillis();
+
+        System.out.println("Time taken by = " + type + " " + (end-start) + " ms");
+    }
+

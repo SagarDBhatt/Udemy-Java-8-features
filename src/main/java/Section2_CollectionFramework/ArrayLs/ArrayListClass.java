@@ -1,7 +1,6 @@
 package Section2_CollectionFramework.ArrayLs;
 
-import java.awt.*;
-import java.util.ArrayList;
+import java.util.*;
 
 public class ArrayListClass {
 
@@ -43,5 +42,10 @@ public class ArrayListClass {
         for(Integer a : numbers){
             System.out.println(a);
         }
+
+        //List Interface to initialize the ArrayList. At right size of the "=" should be ArrayList OR LinkedList.
+        List<Integer> list = new ArrayList<Integer>();
+        List alist = new ArrayList();
     }
 }
+
