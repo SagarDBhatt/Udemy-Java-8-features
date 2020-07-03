@@ -51,3 +51,29 @@ Case2:
         1 : One
         2 : Two
         3 : Three
+
+==> To remove an element. Provide key to remove that data from HashMap.
+
+            map.remove(3);
+            System.out.println("Remove Key = 3");
+
+==> To delete entire HashMap.
+        map.clear();
+
+
+==> MIMP:: HashMap is not sorting the elements based on Key. In other words, HashMap is unsorted Map.
+[To achieve sorted Map, Dev can use
+"TreeMap" -- Elements are sorted based on the natural order i.e. For Integers 0,1,2,3 and for Strings Alphabetical Order a,b,c,d]
+
+==> Another Map is LinkedHashMap -- Reserves the order at which elements are entered.
+For eg.
+
+        LinkedHashMap lsMap = new LinkedHashMap();
+        lsMap.add(10, "A");
+        lsMap.add(8,"b:);
+        lsMap.add(15,"c");
+        lsMap.add(1,"d");
+
+--> Now, lsMap prints all the elements based on their order of entry. i.e 10,8,15,1.
+
+--> Whereas TreeMap provides elements based on order of Key i.e. 1,8,10,15
