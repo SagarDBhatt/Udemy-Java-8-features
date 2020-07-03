@@ -19,3 +19,35 @@ Case2:
 --> To get the value from HasMap, get() is used.
        map1.get(1.00);      //Dev needs to pass the Key value and get() return value associated with that key.
 
+
+==> Now, Dev created a new HashMap.
+
+        HashMap<Integer, String> map = new HashMap<Integer, String>();
+
+        map.put(1,"One");
+        map.put(2,"Two");
+        map.put(3,"Three");
+
+        System.out.println(map.get(1));
+
+--> Now to get all the keys from HashMap.
+
+        for(Integer i : map.keySet()){
+            System.out.println("Keys == " + i);
+        }
+
+        O/P:
+        Keys == 1
+        Keys == 2
+        Keys == 3
+
+--> To print all the key & value pairs.
+
+        for(Integer i : map.keySet()){
+            System.out.println(i + " : " + map.get(i));
+        }
+
+        O/P:
+        1 : One
+        2 : Two
+        3 : Three

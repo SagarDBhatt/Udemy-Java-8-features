@@ -13,6 +13,11 @@ public class DemoHashMap {
 
         System.out.println(map.get(1));
 
+        for(Integer i : map.keySet()){
+            //System.out.println("Keys == " + i);
+            System.out.println(i + " : " + map.get(i));
+        }
+
 
     }
 }
