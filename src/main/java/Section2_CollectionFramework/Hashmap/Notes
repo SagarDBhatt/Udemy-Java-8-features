@@ -77,3 +77,24 @@ For eg.
 --> Now, lsMap prints all the elements based on their order of entry. i.e 10,8,15,1.
 
 --> Whereas TreeMap provides elements based on order of Key i.e. 1,8,10,15
+
+================================================================================================================
+
+--> One drawback of HashMap is: allowed duplicate key values (Not unique keys).
+For eg:
+
+    HashMap map = new HashMap();    //Initialize Map without Generics. i.e. HashMap<Integer,String> map = new HashMap<Integer,String>();
+
+    map.put(1,"One");
+    map.put(1,"Two");
+
+    Here, Map allows duplicate key values. In this case when Dev used map.get() to retain value associated with key then the latest value
+    associated with key will retuen.
+
+    "map.get(1)" returns "Two" as Two is latest value associated with Key "1".
+
+====
+Solution:
+
+--> To achieve unique key Dev needs to use "Set".
+--> Simillar with "Map" interface, "Set" interface has "HashSet", "LinkedHashSet" and "TreeSet".
