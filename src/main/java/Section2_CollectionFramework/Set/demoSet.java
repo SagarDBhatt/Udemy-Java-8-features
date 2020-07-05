@@ -38,7 +38,15 @@ public class demoSet {
         treeSet.add(24);
         treeSet.add(16);
 
-        printSet(treeSet,"TreeSet");
+        Set<String> treeSetString = new TreeSet<String>();
+        treeSetString.add("A");
+        treeSetString.add("B");
+        treeSetString.add("C");
+
+//      printSet(treeSet,"TreeSet");
+
+        iterationSet(treeSet,"TreeSet with Integer");
+        iterationSet(treeSetString,"TreeSet with String");
 
 
     }
@@ -46,5 +54,15 @@ public class demoSet {
     public static void printSet(Set set, String type){
         System.out.println("For the type == " + type);
         System.out.println(set.toString());
+    }//End of printSet
+
+    public static <E> void iterationSet(Set<E> set, String type){
+
+        System.out.println("Type of Set = " + type);
+        for(E setValue : set){
+            System.out.println("Set Values = " + setValue);
+        }
+        System.out.println();
     }
+
 }

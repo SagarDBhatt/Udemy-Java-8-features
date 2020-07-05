@@ -75,3 +75,74 @@ For Eg:
 O/P:
         For the type == TreeSet
         [9, 10, 16, 24]
+
+======================================================================================================
+
+MIMP : Set interface has all the unique objects i.e. No duplicate objects are allowed. Even if Dev tried to
+insert duplicate objects, only unique values stored inside.
+
+For Eg:
+            Set<Integer> treeSet = new TreeSet<Integer>();
+
+            treeSet.add(10);
+            treeSet.add(9);
+            treeSet.add(24);
+            treeSet.add(16);
+
+            //Adding duplicate values
+            treeSet.add(24);
+            treeSet.add(16);
+
+            printSet(treeSet,"TreeSet");
+
+O/P:
+        For the type == TreeSet
+        [9, 10, 16, 24]
+
+======================================================================================================
+
+--> Iteration method to print objects of Set interface.
+--> Dev created "Generic" method to iterate the objects of any type passed in the method.
+
+For Eg:
+--> Below method can be accessed by passing Integer OR String OR any type of Set.
+
+     public static <E> void iterationSet(Set<E> set, String type){
+
+        System.out.println("Type of Set = " + type);
+        for(E setValue : set){
+            System.out.println("Set Values = " + setValue);
+        }
+        System.out.println();
+    }
+
+==> Calling method using Generics.
+        Set<Integer> treeSet = new TreeSet<Integer>();
+
+        treeSet.add(10);
+        treeSet.add(9);
+        treeSet.add(24);
+        treeSet.add(16);
+
+        Set<String> treeSetString = new TreeSet<String>();
+        treeSetString.add("A");
+        treeSetString.add("B");
+        treeSetString.add("C");
+
+//      printSet(treeSet,"TreeSet");
+
+        iterationSet(treeSet,"TreeSet with Integer");
+        iterationSet(treeSetString,"TreeSet with String");
+
+O/P:
+
+Type of Set = TreeSet with Integer
+Set Values = 9
+Set Values = 10
+Set Values = 16
+Set Values = 24
+
+Type of Set = TreeSet with String
+Set Values = A
+Set Values = B
+Set Values = C
