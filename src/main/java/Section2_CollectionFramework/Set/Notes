@@ -1,0 +1,22 @@
+*******************************************************
+                        ONSJHJSA
+*******************************************************
+
+**** SET:
+
+--> Unordered collection of objects in which duplicate values can not be stored.
+--> Like other interfaces, Set can be declared normally Or with specific datatype/wrapper class.
+
+   1. Normal Declaration:
+      Set aSet = new HashSet();   //Set interface provide only one argument<key> and not <key, value> pair.
+
+   2. Wrapper class Declaration:
+        Set<String> set = new Set<String>();
+
+--> Set stored a single datatype value and not <key,value> pair. i.e. Collection of single type objects.
+
+                aSet.add("A");
+                aSet.add("B");
+                aSet.add("C");
+                aSet.add("D");
+
