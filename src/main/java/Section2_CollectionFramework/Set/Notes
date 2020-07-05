@@ -20,3 +20,58 @@
                 aSet.add("C");
                 aSet.add("D");
 
+--> Unlike Map interface, printing objects of Set is easier. Set has toString() which prints all the objects stored within Set.
+
+        System.out.println(aSet.toString());
+
+        o/p:: [A,B,C,D]
+
+======================================================================================================
+
+**** LinkedHashSet::
+
+--> HashSet can not retain the order at which objects were inserted.
+--> In specific applications, it is required to receive objects in order they were inserted in sets [FIFO]
+--> Achieve this by using "LinkedHashSet" where Order at which of objects were inserted retain and prints at the same order.
+
+For Eg:
+
+        Set<Integer> linkedSet = new LinkedHashSet<Integer>();
+
+        linkedSet.add(8);
+        linkedSet.add(20);
+        linkedSet.add(4);
+        linkedSet.add(1);
+
+        printSet(linkedSet,"LinkedHashSet");
+
+O/P:
+       For the type == LinkedHashSet
+       [8, 20, 4, 1]
+
+======================================================================================================
+
+**** TreeSet:
+--> Stored Ordered collection of objects. Objects are stoted in their natural order
+i.e. For Integers 1,2,3,4...
+    For Strings - Alphabetical Order - A,B,C,D...
+
+--> Many cased it required to store objects in Sorted order i.e. Asceding order. And print the objects in the same order.
+--> Achieve this requiement using TreeMap in which all the objects are sorted and stored.
+--> TreeMap follows balanced tree concept so evverytime a new object is inserted, treeMap balanced itself.
+--> That is how TreeMap achieve sorted objects.
+
+For Eg:
+
+        Set<Integer> treeSet = new TreeSet<Integer>();
+
+        treeSet.add(10);
+        treeSet.add(9);
+        treeSet.add(24);
+        treeSet.add(16);
+
+        printSet(treeSet,"TreeSet");
+
+O/P:
+        For the type == TreeSet
+        [9, 10, 16, 24]
