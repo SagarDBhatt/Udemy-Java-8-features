@@ -44,8 +44,31 @@ public class ArrayListClass {
         }
 
         //List Interface to initialize the ArrayList. At right size of the "=" should be ArrayList OR LinkedList.
-        List<Integer> list = new ArrayList<Integer>();
-        List alist = new ArrayList();
+        List<Integer> alist = new ArrayList<Integer>();
+        //List alist = new ArrayList();
+
+        alist.add(8);
+        alist.add(12);
+        alist.add(16);
+        alist.add(4);
+        alist.add(2);
+
+// Sorting the ArrayList using Collection.Sort method and Arrays.sort methos.
+        System.out.println();
+        System.out.println("=============");
+        for(Integer a: alist){
+            System.out.println(a);
+        }
+
+// Sort the arrayList and print the objects.
+        Collections.sort(alist);
+        System.out.println("After Collections. Sort");
+
+        for(Integer b:alist){
+            System.out.println(b);
+        }
+
+
     }
 }
 

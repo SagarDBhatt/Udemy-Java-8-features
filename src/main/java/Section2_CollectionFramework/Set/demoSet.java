@@ -1,9 +1,6 @@
 package Section2_CollectionFramework.Set;
 
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class demoSet {
 
@@ -45,9 +42,11 @@ public class demoSet {
 
 //      printSet(treeSet,"TreeSet");
 
-        iterationSet(treeSet,"TreeSet with Integer");
-        iterationSet(treeSetString,"TreeSet with String");
+//        iterationSet(treeSet,"TreeSet with Integer");
+//        iterationSet(treeSetString,"TreeSet with String");
 
+
+        //=============================
 
     }
 

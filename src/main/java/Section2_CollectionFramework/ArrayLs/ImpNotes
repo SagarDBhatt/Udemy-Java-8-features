@@ -19,4 +19,16 @@ For Eg:
 
 --> In ArrayList, all the elements are stored in Indexed order. So when Dev removed / deleted the first element then all the other elements
 shift one index back. This shifting of all the elements consumes good amount of time.
---> Thus, ArrayList is not suitable for Delete operation.  
+--> Thus, ArrayList is not suitable for Delete operation.
+
+=========================================================================================
+
+==> There are two methods to Sort the objects / elemetns of List Interface (ArrayList Or LinkedList)
+1. Collections.sort(List list)
+2. Arrays.sort(Array[] array)
+
+==> Arrays.sort() is used to sort the Arrays in ascending order of their natural order.
+==> Collection.sort() is used to sort Collection class objects such as ArrayList, LinkedList to sort in their natural ascending order.
+
+--> In manay cases, Dev need to sort the list based on specific crieteria or field. In this case, Dev needs to define sorting method in
+Comparator class. 
