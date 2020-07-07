@@ -31,4 +31,5 @@ shift one index back. This shifting of all the elements consumes good amount of 
 ==> Collection.sort() is used to sort Collection class objects such as ArrayList, LinkedList to sort in their natural ascending order.
 
 --> In manay cases, Dev need to sort the list based on specific crieteria or field. In this case, Dev needs to define sorting method in
-Comparator class. 
+Comparator class.
+
