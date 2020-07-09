@@ -15,8 +15,13 @@ public class RunnerClass {
         listPerson.add(new Person(3,30,"Dan"));
         listPerson.add(new Person(4,29,"Lynn"));
 
-        Collections.sort(listPerson);
+        //Not possible as Person object has three fields, Dev needs to define based on which field to sort using Comparator interface.
+        //Collections.sort(listPerson);
 
+        Collections.sort(listPerson,new SortByAge());
 
+        for(Person p : listPerson){
+            System.out.println(p);
+        }
     }
 }
