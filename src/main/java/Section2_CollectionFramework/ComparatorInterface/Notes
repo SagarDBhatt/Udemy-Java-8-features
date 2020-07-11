@@ -44,4 +44,4 @@ Class Person has 3 properties Name, age and Id.
 --> Implementation of compare method ::
 
         compare object.classProperty i.e. o1.getAge() > o2.getAge() == to compare objects based on the age.
-        Simillarly, o1.getName > o2.getName() ==> to compare objects based on the Name. 
+        Simillarly, o1.getName > o2.getName() ==> to compare objects based on the Name.
