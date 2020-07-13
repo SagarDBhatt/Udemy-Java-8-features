@@ -17,6 +17,22 @@ public class RunnerClass {
         listPerson.add(new Person(3,30,"Dan"));
         listPerson.add(new Person(4,29,"Lynn"));
 
+        ArrayList list = new ArrayList();
+
+        list.add(12);
+        list.add(1);
+        list.add(5);
+        list.add(9);
+        list.add(4);
+
+
+        Collections.sort(list);
+
+        System.out.println("After Sorting List (with single param:  ");
+        for(Object a : list){
+            System.out.println(a);
+        }
+
         //Collections.sort(listPerson);
 
         //Implement sortByName class to sort the objects by class name
@@ -27,6 +43,17 @@ public class RunnerClass {
         {
             System.out.println(p);
         }
+
+//Sort the objects based on ID:
+
+        Collections.sort(listPerson,new sortByID());
+
+        System.out.println("After sorting by ID");
+
+        for(Person p2 : listPerson){
+            System.out.println(p2);
+        }
+
 
 
     }

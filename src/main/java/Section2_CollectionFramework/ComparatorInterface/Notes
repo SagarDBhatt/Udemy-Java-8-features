@@ -20,3 +20,62 @@ For Eg:
 
 ================================================================================
 
+--> Usually, Collections.sort(ArrayList) is used to sort the ArrayList object [Which has just one param]
+For Eg:
+
+         ArrayList list = new ArrayList();
+
+                list.add(12);
+                list.add(1);
+                list.add(5);
+                list.add(9);
+                list.add(4);
+
+
+                Collections.sort(list);
+
+                System.out.println("After Sorting List (with single param:  ");
+                for(Object a : list){
+                    System.out.println(a);
+                }
+
+O/p:
+
+        After Sorting List (with single param:
+        1
+        4
+        5
+        9
+        12
+
+--> But, the class "Person" which has three properties i.e Id, name, Age. Collections.sort(personlist) can not work as Dev needs to provide specific details of which filed needs to sort.
+
+--> To solve this, Dev needs to implement Comparator interface. This interface define based on which field Objects needs to be sorted.
+
+For Eg:
+--> Dev created a class "SortByID" & implements Comparator interface.
+
+public class sortByID implements Comparator<Person> {
+    @Override
+    public int compare(Person o1, Person o2) {
+
+        if(o1.getId() <= o2.getId())
+            return -1;
+        else
+            return 1 ;
+    }
+}
+
+--> Comparator interface has unimplemented method compare with param passed in the args.
+--> compare method compare two objects properties. In our case, ID and return int value
+        if O1 > O2 ==> return 1
+        if O1 == O2 ==> return 0
+        if O1 < O2 ==> Return -1
+
+==> In the main method with Collection.sort() provide the object of the sortByID class.
+
+         Collections.sort(listPerson,new sortByID());
+
+            --> This sort the objects of class "Person" base ob ID.
+
+
