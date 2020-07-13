@@ -19,7 +19,14 @@ public class RunnerClass {
 
         //Collections.sort(listPerson);
 
-          
+        //Implement sortByName class to sort the objects by class name
+        Collections.sort(listPerson,new sortByName());
+
+        System.out.println("After Sorting by Name");
+        for(Person p : listPerson)
+        {
+            System.out.println(p);
+        }
 
 
     }
