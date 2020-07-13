@@ -16,4 +16,7 @@ For Eg:
 
 --> Now, Dev can not use Collections.sort(listPerson) method to sort the objects.
         -> [There are 3 fields in Person objects. Dev needs to define based on which field compiler needs to sort the object]
-        -> To achieve that Dev needs to define "Comparator" interface. 
+        -> To achieve that Dev needs to define "Comparator" interface.
+
+================================================================================
+
