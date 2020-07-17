@@ -1,0 +1,51 @@
+************************************************************
+                        ONSJHJSA
+************************************************************
+
+==> Java 5 and later version introduce "foreach" loop for list elements.
+
+for eg:
+        LinkedList<Integer> list = new LinkedList<Integer>();
+
+            for(int i=1; i<=4;i++)
+                list.add(i);
+
+            // Java 5 and later version has foreach loop.
+            for(Integer val : list)
+                System.out.println("List value = " + val);
+
+==> Before Java 5, Dev used Iterator interface to work on elements.
+
+For Eg:
+        Use list.iterator() to iterate each of element.
+
+         Iterator<Integer> itrt = list.iterator();
+
+                while(itrt.hasNext())
+                    System.out.println(itrt.next());
+
+--> itrt.hasNext() return true if there is an element available to iterate.
+        itrt.next() shows the next Element.
+
+=============================================
+==> MIMP : Difference between foreach loop and Iterator interface:
+
+    In for-each loop, we can’t modify collection,
+    it will throw a ConcurrentModificationException
+    on the other hand with iterator we can modify collection.
+
+For Eg:
+        for(Integer val : list){
+             System.out.println("List value = " + val);
+
+             if(val == 2){
+                 list.remove(val);
+             }
+        }
+
+--> Here, inside the foreach loop, Dev is trying to remove an element. This dual operations are not allowed and throw ConcurrentModificationException.
+
+--> But, Iterator allows dual operation of reading an element as well as remove operation without throwing an exception.
+        
+
+
