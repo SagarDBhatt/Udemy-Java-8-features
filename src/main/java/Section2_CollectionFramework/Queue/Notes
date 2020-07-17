@@ -18,3 +18,40 @@ For Eg:
         Queue<Integer> queue = new LinkedList<Integer>();
         Queue<Integer> ue = new PriorityQueue<Integer>();
         Queue<String> ts = new PriorityBlockingQueue<String>();
+
+==========================================================================
+
+==> Methods related with Queue:
+
+1. add() : to add an element in object.
+
+      Queue<Integer> q = new LinkedList<Integer>();
+
+         for(int i=1;i<=8;i++)
+            q.add(i);
+
+2. To print elements either use advanced for loop OR just use object of the class
+
+    for(Integer val : q){
+            System.out.println("Queue value = " + val);
+        }
+
+        System.out.println("Elements of Queue = " + q);
+
+O/P:
+        Queue value = 1
+        Queue value = 2
+        Queue value = 3
+        Queue value = 4
+        Queue value = 5
+        Queue value = 6
+        Queue value = 7
+        Queue value = 8
+        Elements of Queue = [1, 2, 3, 4, 5, 6, 7, 8]
+
+--> Simillarly, remove(), size() and all the defaults method included in List Interface.
+--> Note that remove() will remove the first element inserted in the queue i.e. head element.
+
+==> Queue can be Unbounded (LinkedList) OR Bounded (ArrayLockingQueue).
+==> BoundedQueue has fix size and no more elements can be added. whereas Unbouded queue does not have fix size
+    and elements higher than the size can be added.
