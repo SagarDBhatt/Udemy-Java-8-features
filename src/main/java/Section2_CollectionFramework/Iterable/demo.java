@@ -16,17 +16,29 @@ public class demo {
         for(Integer val : list){
             System.out.println("List value = " + val);
 
-            if(val == 2){
+           /* if(val == 2){
                 list.remove(val);
-            }
+            }*/
         }
 
         //==========================================================
         // Iterator interface
         Iterator<Integer> itrt = list.iterator();
 
-        while(itrt.hasNext())
+        while(itrt.hasNext()){
             System.out.println(itrt.next());
+
+            Integer val = itrt.next();
+
+            if(val == 4){
+                list.remove(val);
+                System.out.println("Removed 4");
+            }
+/*
+            System.out.println("After Removal");
+            System.out.println(itrt.next());*/
+        }
+
 
     }
 }

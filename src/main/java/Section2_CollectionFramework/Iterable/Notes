@@ -46,6 +46,7 @@ For Eg:
 --> Here, inside the foreach loop, Dev is trying to remove an element. This dual operations are not allowed and throw ConcurrentModificationException.
 
 --> But, Iterator allows dual operation of reading an element as well as remove operation without throwing an exception.
-        
+
+
 
 
