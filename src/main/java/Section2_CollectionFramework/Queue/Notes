@@ -1,0 +1,20 @@
+********************************************************
+                    ONSJHJSA
+********************************************************
+
+==> Queue:
+
+--> Interface in Java to process elements in FIFO order.
+--> It is ordered list of objects. Limitation is insertion is limited at the end and deletion is limited at the begining, i.e. FIFO principle.
+
+--> Queue is an interface and most common concrete classes that implements Queue interface are "PriorityQueue" & "LinkedList".
+--> Both classes are not thread safe.
+--> If thread safe opearation is required then "PriorityBlockingQueue" is implemented.
+
+==> Since Queue is an interface, Objects can not be created for the type Queue. Dev needs a concrete class as mentioned above to create
+    an object.
+
+For Eg:
+        Queue<Integer> queue = new LinkedList<Integer>();
+        Queue<Integer> ue = new PriorityQueue<Integer>();
+        Queue<String> ts = new PriorityBlockingQueue<String>();

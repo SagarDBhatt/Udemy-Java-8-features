@@ -76,6 +76,6 @@ public class sortByID implements Comparator<Person> {
 
          Collections.sort(listPerson,new sortByID());
 
-            --> This sort the objects of class "Person" base ob ID.
+            --> This sort the objects of class "Person" based on ID.
 
 
