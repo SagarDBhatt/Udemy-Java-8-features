@@ -32,4 +32,3 @@ shift one index back. This shifting of all the elements consumes good amount of 
 
 --> In manay cases, Dev need to sort the list based on specific crieteria or field. In this case, Dev needs to define sorting method in
 Comparator class.
-

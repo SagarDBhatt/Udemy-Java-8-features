@@ -1,0 +1,8 @@
+******************************************
+                ONSJHJSA
+******************************************
+
+--> Problem Statement:
+
+1. We have 3 vehicles and 3 to 4 drivers assigned to each vehicle.
+2. Each person should be sorted in a in a preference i.e. first person get the priority to drive and if he/she is not available then second person will get the priority.

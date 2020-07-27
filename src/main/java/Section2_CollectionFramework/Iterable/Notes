@@ -47,6 +47,17 @@ For Eg:
 
 --> But, Iterator allows dual operation of reading an element as well as remove operation without throwing an exception.
 
+For Eg:
+       Iterator<Integer> itrt = list.iterator();
 
+       while(itrt.hasNext()){
+            System.out.println(itrt.next());
 
+            Integer val = itrt.next();
+
+            if(val == 4){
+                list.remove(val);
+                System.out.println("Removed 4");
+            }
+       }
 
