@@ -4,5 +4,20 @@
 
 --> Problem Statement:
 
-1. We have 3 vehicles and 3 to 4 drivers assigned to each vehicle.
+1. We have 3 vehicles - bus, Car, Van, Bike and 3 to 4 drivers assigned to each vehicle.
+For Eg:
+
+    public static String[] vehicles = { "Bus","Car","Van","Bike" };
+
+        public static String[][] drivers = {
+                {"Ram","Sam","Kan"},
+                {"Josh","Kosh","Hosh","Rosh"},
+                {"Ja","Ra","Ma"},
+                {"Ken","Ren"}
+        };
+
 2. Each person should be sorted in a in a preference i.e. first person get the priority to drive and if he/she is not available then second person will get the priority.
+
+For Eg:
+-> For the vehicle "Car" there are 4 drivers assigned "Josh","Kosh","Hosh","Rosh".
+-> Each driver is in priority order i.e. first preference is for "Josh" and if Josh is not available then "Kosh" will assign.

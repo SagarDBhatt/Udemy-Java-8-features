@@ -11,4 +11,8 @@ public class Complex {
             {"Ken","Ren"}
     };
 
+    public static void main(String[] args) {
+        
+    }
+
 }
