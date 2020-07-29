@@ -1,9 +1,6 @@
 package Section2_CollectionFramework.ComplexDS;
 
-import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Complex {
 
@@ -19,31 +16,27 @@ public class Complex {
     public static void main(String[] args) {
 
         List<String> vehiclesList = new ArrayList<String>();
-        String[] driver= new String[vehicles.length];
         Set<String> driversSet = new LinkedHashSet<String>();
+
+        Map<String,Set<String>> vehicleAndDriver = new LinkedHashMap<>();
 
         /**
          * Iterate vehicles and add each vehicle in the vehicleList.
          */
-        for (String vehicle : vehicles) {
-            vehiclesList.add(vehicle);
+        for(int i =0; i<vehicles.length;i++){
+            String vehicle = vehicles[i];
+            String[] driver = drivers[i];
 
+            Set<String> driverSet = new LinkedHashSet<>();
+            for(String driverlist : driver){
+                driverSet.add(driverlist);
+            }
 
+            vehicleAndDriver.put(vehicle,driverSet);
         }
 
-
-
-
-        for (int i = 0; i < drivers.length; i++) {
-            driver = drivers[i];
-            System.out.println(" Drivers Length" + drivers.length);
-
-            for(String driverName : driver)
-                driversSet.add(driverName);
+        for(String vehicle : vehicleAndDriver.keySet()){
+            System.out.println("Vehicle == " + vehicle + " Driver Set == " + vehicleAndDriver.get(vehicle));
         }
-
-       /* System.out.println("Vehicles List = " + vehiclesList.toString());
-        System.out.println("Drivers List = " + driversSet.toString());*/
-
     }
 }
