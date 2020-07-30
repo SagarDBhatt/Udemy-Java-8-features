@@ -18,24 +18,24 @@ public class Complex {
         List<String> vehiclesList = new ArrayList<String>();
         Set<String> driversSet = new LinkedHashSet<String>();
 
-        Map<String,Set<String>> vehicleAndDriver = new LinkedHashMap<>();
+        Map<String, Set<String>> vehicleAndDriver = new LinkedHashMap<>();
 
         /**
          * Iterate vehicles and add each vehicle in the vehicleList.
          */
-        for(int i =0; i<vehicles.length;i++){
+        for (int i = 0; i < vehicles.length; i++) {
             String vehicle = vehicles[i];
             String[] driver = drivers[i];
 
             Set<String> driverSet = new LinkedHashSet<>();
-            for(String driverlist : driver){
+            for (String driverlist : driver) {
                 driverSet.add(driverlist);
             }
 
-            vehicleAndDriver.put(vehicle,driverSet);
+            vehicleAndDriver.put(vehicle, driverSet);
         }
 
-        for(String vehicle : vehicleAndDriver.keySet()){
+        for (String vehicle : vehicleAndDriver.keySet()) {
             System.out.println("Vehicle == " + vehicle + " Driver Set == " + vehicleAndDriver.get(vehicle));
         }
     }
