@@ -1,6 +1,8 @@
-package Section3_LambdaExpression;
+package Section3_LambdaExpression.ComparatorUsingLambda;
 
-public class Employee {
+import java.util.Comparator;
+
+public class Employee{
     private int id,salary;
     private String name;
     private Double hoursWorked;
@@ -58,4 +60,5 @@ public class Employee {
         details.getSalary();
       //  details.getHoursWorked();
     }
+
 }
