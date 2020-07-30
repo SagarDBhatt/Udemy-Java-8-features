@@ -56,6 +56,6 @@ public class Employee {
 
     public void getImplementedMethods(getDetails details){
         details.getSalary();
-        details.getHoursWorked();
+      //  details.getHoursWorked();
     }
 }

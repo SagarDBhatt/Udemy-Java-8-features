@@ -11,12 +11,9 @@ public class Runner {
             public void getSalary() {
                 System.out.println("Salary = " + emp.getSalary());
             }
-
-            @Override
-            public void getHoursWorked() {
-                System.out.println("Hours worked = " + emp.getHoursWorked());
-            }
         });
+
+
     }
 
 }

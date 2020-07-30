@@ -1,0 +1,115 @@
+**************************************************
+                    ONSJHJSA
+**************************************************
+
+Lambda Expression:
+
+-> It provides a clear & consise way to define single method interface.
+==> Interface which has only one ABSTRACT method is called "FunctionalInterface".
+    [ABSTRACT method : one which does not have implementation. Class that implement interface should define the method.]
+    [Note : Interface can have more than one default method i.e method which has default implementation.]
+
+For Eg:
+    Interface draw(){
+        void shape();
+    }
+
+--> Interface "draw()" has a single ABSTRACT method shape() which needs to define by implemented class.
+    This is called FunctionInterface.
+--> "@FunctionalInterface" annotation can be used to define an Interface as FunctionInterface. This is optional.
+
+==> FunctionalInterface can have a default implemented method (Java 8 feature) But it should have only one Abstract method.
+
+For Eg:
+    @FunctionalInterface    //Optional
+    Interface draw(){
+        void shape();
+
+        default void color(){
+            System.out.println("Interface with a default method");
+        }
+    }
+
+==========================================================================================
+SYNTAX FOR LAMBDA EXPRESSION:
+
+    (ARGUMENT LIST) -> { BODY }
+
+1) Argument-list: It can be empty or non-empty as well.
+
+2) Arrow-token: It is used to link arguments-list and body of expression.
+
+3) Body: It contains expressions and statements for lambda expression.
+
+===========================================================================
+
+IMPLEMENTATION OF LAMBDA EXPRESSION:
+
+        @FunctionalInterface
+        public interface functionalInterfce {
+            void draw();
+        }
+
+1.WITHOUT USING LAMBDA EXPRESSION:
+
+        public class Demo {
+
+            public static void main(String[] args) {
+
+                functionalInterfce interfceObject = new functionalInterfce() {
+                    @Override
+                    public void draw() {
+                        System.out.println("Draw method without using lambda expression.");
+                    }
+                }; // this is imp. Need ";" at the end of the implementation.
+                interfceObject.draw();      //calling draw()
+            }
+        }
+
+2. SAME METHOD IMPLEMENTATION USING LAMBDA EXPRESSION:
+
+        public class Demo {
+
+            public static void main(String[] args) {
+
+                // WITHOUT LAMBDA EXP
+                functionalInterfce interfceObject = new functionalInterfce() {
+                    @Override
+                    public void draw() {
+                        System.out.println("Draw method without using lambda expression.");
+                    }
+                };
+                interfceObject.draw();      //calling draw()
+
+                functionalInterfce interfceObject2 = () -> {
+                    System.out.println("Draw method implementation using Lambda Expression!");
+                };
+                interfceObject2.draw();     //calling draw()
+
+
+            }
+        }
+
+
+===> O/P:::
+
+        Draw method without using lambda expression.
+        Draw method implementation using Lambda Expression!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
