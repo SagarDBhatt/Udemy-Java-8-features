@@ -53,4 +53,9 @@ public class Employee {
                 ", hoursWorked=" + hoursWorked +
                 '}';
     }
+
+    public void getImplementedMethods(getDetails details){
+        details.getSalary();
+        details.getHoursWorked();
+    }
 }
