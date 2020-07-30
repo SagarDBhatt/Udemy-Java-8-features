@@ -96,8 +96,41 @@ IMPLEMENTATION OF LAMBDA EXPRESSION:
         Draw method without using lambda expression.
         Draw method implementation using Lambda Expression!
 
+===========================================================================
 
+ONE ARGUMENTED FUNCTIONAL INTERFACE WITH LAMBDA EXP:
 
+    @FunctionalInterface
+    public interface oneArgumentFunctInterface {
+        void printNumber(int a);
+    }
+
+//IMPLEMENTATION WITHIN CLASS
+
+    oneArgumentFunctInterface argObject = (x) -> {
+                System.out.println("Value to print == " + x);
+    };
+    argObject.printNumber(10);
+
+===========================================================================
+
+==> FUNCTIONAL INTERFACE WITH MULTIPLE ARGS & RETURN TYPE:
+
+        @FunctionalInterface
+        public interface multiArgsFuncInterface {
+            double multiply(double a, double b);
+        }
+
+//IMPLEMENTATION:
+
+        multiArgsFuncInterface mulObject = (a,b) -> {
+            System.out.println("This is multi-line, multi-args and return type lambda expression");
+            return a*b;
+        };
+
+        System.out.println(mulObject.multiply(12,5));
+
+O/P::
 
 
 
