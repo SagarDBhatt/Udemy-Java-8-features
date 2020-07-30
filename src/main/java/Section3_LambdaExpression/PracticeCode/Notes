@@ -1,5 +1,6 @@
 **************************************************
                     ONSJHJSA
+                OM NAMH SHIVAY!!!
 **************************************************
 
 Lambda Expression:
@@ -131,10 +132,37 @@ ONE ARGUMENTED FUNCTIONAL INTERFACE WITH LAMBDA EXP:
         System.out.println(mulObject.multiply(12,5));
 
 O/P::
+        This is multi-line, multi-args and return type lambda expression
+        60.0
 
+==================================================================================================================================
+==================================================================================================================================
+        LAMBDA EXPRESSION TO CREAT THREAD
 
+--> Lambda expression is used to implement functional interface.
+--> System defined functional Interfaces are : Runnable and Comparable.
+--> Runnable interface has single abstract method - "run()". run() is used in multithreading programming.
 
+==> Implementation of thread and Runnable interface without lambda expression.
 
+        Runnable runnableObj1 = new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("Thread 1 is running!");
+            }
+        };
+
+        Thread threadObj1 = new Thread(runnableObj1);
+        threadObj1.start();
+
+==> USE LAMBDA EXPRESSION TO CREAT THREAD.
+
+      Runnable runobj2 = () -> {
+                 System.out.println("Thread 2 using Lambda is running.");
+      };
+
+      Thread thread2 = new Thread(runobj2);
+      thread2.start();
 
 
 
