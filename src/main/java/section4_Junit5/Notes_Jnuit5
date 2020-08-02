@@ -1,0 +1,36 @@
+********************************************************
+                        ONSJHJSA
+********************************************************
+
+Junit 5 architecture:
+
+==> Junit 5 has two mandatory packages to run Junits.
+1. Platform: This is base to run different tests i.e. Test engine
+2. API packages: There are 3 types.
+    i. Jupiter: API to run test cases.
+    ii. Vintage: API to support older versions of Jnit.
+    iii. Extention Library: Dev create own extention using 3rd party library to create API.
+
+==> Maven Depenedency: To Run Jupiter, Dev require two depenedencies.
+    1. junit-jupiter-engine
+    2. junit-jupiter-api
+
+==> Inside the property, dev define a variable for jupiter version.
+    The value of this tag <junit.jupiter.version> is used inside the dependency.
+
+     <properties>
+            <!-- This is the variable where we define the version for J unit.
+            This variable should be use within dependency block. See Junit-jupiter-engine dependency  -->
+
+            <junit.jupiter.version>5.4.0</junit.jupiter.version>
+        </properties>
+
+==> As seen below, Sysntax to use variable is "${ }". 
+
+     <dependency>
+               <groupId>org.junit.jupiter</groupId>
+               <artifactId>junit-jupiter-engine</artifactId>
+               <version>${junit.jupiter.version}</version>
+               <scope>test</scope>
+     </dependency>
+
