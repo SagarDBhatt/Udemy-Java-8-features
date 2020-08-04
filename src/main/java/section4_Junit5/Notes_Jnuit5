@@ -25,7 +25,7 @@ Junit 5 architecture:
             <junit.jupiter.version>5.4.0</junit.jupiter.version>
         </properties>
 
-==> As seen below, Sysntax to use variable is "${ }". 
+==> As seen below, Sysntax to use variable is "${ }".
 
      <dependency>
                <groupId>org.junit.jupiter</groupId>
@@ -33,4 +33,23 @@ Junit 5 architecture:
                <version>${junit.jupiter.version}</version>
                <scope>test</scope>
      </dependency>
+=============================================================================================
 
+         HOW TO CREATE JUNIT TEST CASE:
+
+-> Simple method is to create a "Test class" and define method. In Maven projects path should be in "src/test/java".
+-> Use IDE support: Right click in class -> Generate -> Test.
+        -> This will create a separate class with test method in Java.
+
+==> Below is the auto generated Test class with name: MathUtilsTest.java
+
+        class MathUtilsTest {
+
+            @Test
+            void add() {
+            }
+        }
+
+--> @Test : 1. Tell IDE this is Test method. As the test class doesn't have Main method,
+            IDE start execution from @Test annotation.
+            2. Tell Junit test engine this method needs to test.
