@@ -162,4 +162,41 @@ Junit 5 architecture:
 
         () -> utils.divide(1,0);
 
-                
+===================================================================================================================
+===================================================================================================================
+
+**** TEST LIFECYCLE ANNOTATIONS:
+1. There are 4 annotations which Jnuit 5 framework provides along with @Test annotation.
+
+    i. @BeforeAll : The method annoated with @BeforeAll executed at the beginning of the execution starts. This is the first method executed
+                    before any other methods starts.
+
+    ii. @BeforeEach : The method annotated with @BeforeEach annotation executes before each @Test method execution.
+
+    iii. @AfterEach : The method annotated with @AfterEach annotation executes after each @Test method execution. [if there are 5 @Test method then
+                        @AfterEach method executed 5 times after each @Test method executed. ]
+
+    iv. @AfterAll: The method executed just one time after all the @Test methods executed.
+
+==> Use of these annotations:
+
+1. As I can see from the @Test method, I need to create an object of "MathUtils class" for each @Test method. This is a repetitive code
+    which is not memory efficient.
+2. Solution is, I can initialize MathUtil class object in a method annotated with @BeforeEach annotation. This will provide new object to
+    each @Test method.
+For Eg:
+
+    MathUtils utils;
+
+        @BeforeEach
+        void init(){
+            utils = new MathUtils();
+        }
+
+        @Test
+        void add() {
+           //MathUtils mathUtils = new MathUtils();
+           int actual = utils.add(1,1);
+           int expected = 2;
+          assertEquals(expected,actual,"The add method should add two numbers");
+        }
