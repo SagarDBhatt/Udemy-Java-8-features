@@ -135,3 +135,31 @@ Junit 5 architecture:
         }
 
 7. Above code runs fine and my test method passed successfully.
+
+===================================================================================================================
+===================================================================================================================
+
+**** TEST IF METHOD THROWS VALID EXCEPTION:
+
+1. Developer needs to verify that the method is throwing the valid exception.
+2. I created a method divide(int a, int b). This method divide a by b. If the b = 0 then method should throw airthematic exception.
+
+        public double divide(int a, int b){
+            return a/b;
+        }
+
+3. Now, create a test method and check if the method is throwing valid exception or not. "assertThrows" is a method to check if the thrown exception
+    is same as expected exception.
+
+        @Test
+        void testDivide(){
+            MathUtils utils = new MathUtils();
+            assertThrows(ArithmeticException.class, () -> utils.divide(1,0),"Divide by zero");
+        }
+
+4. assertThrow method has 2 args. first one need to specify the expected exception. In our case "ArithematicException.class".
+    second arg required executables and this can be provided using lambda expression.
+
+        () -> utils.divide(1,0);
+
+                

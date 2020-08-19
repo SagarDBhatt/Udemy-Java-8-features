@@ -25,4 +25,10 @@ class MathUtilsTest {
         double actual = utils.calcCircleArea(10);
         assertEquals(expectedArea,actual,"The area of the circle should match");
     }
+
+    @Test
+    void testDivide(){
+        MathUtils utils = new MathUtils();
+        assertThrows(ArithmeticException.class, () -> utils.divide(1,0),"Divide by zero");
+    }
 }

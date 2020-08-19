@@ -10,5 +10,8 @@ public class MathUtils {
         return 3.14 * radius * radius;
     }
 
+    public double divide(int a, int b){
+        return a/b;
+    }
 
 }
