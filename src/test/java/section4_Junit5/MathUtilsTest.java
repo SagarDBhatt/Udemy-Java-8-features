@@ -3,9 +3,12 @@ package section4_Junit5;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
+//@TestInstance(TestInstance.Lifecycle.PER_METHOD)
 class MathUtilsTest {
 
     MathUtils utils;
@@ -14,7 +17,7 @@ class MathUtilsTest {
     static void beforeAllInit(){
         System.out.println("This is before all method");
     }
-    
+
     @BeforeEach
     void init(){
         utils = new MathUtils();
@@ -31,8 +34,16 @@ class MathUtilsTest {
     @Test
     void testCalcCircleArea(){
         //MathUtils utils = new MathUtils();
+
         double expectedArea = 314.0;
         double actual = utils.calcCircleArea(10);
+
+        boolean flag = false;
+        if(actual<0) {
+            flag = true;
+        }
+        assumeTrue(flag);
+
         assertEquals(expectedArea,actual,"The area of the circle should match");
     }
 

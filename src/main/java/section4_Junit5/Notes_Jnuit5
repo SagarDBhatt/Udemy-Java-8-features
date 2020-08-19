@@ -218,3 +218,54 @@ For Eg:     I created a method which simply print a message. This method annotat
                     static void beforeAllInit(){
                         System.out.println("This is before all method");
                     }
+
+**** Other Userful annotations :
+    i. @DispayName("Name of the Test Method") : This annotation is useful when there are so many Test methods. @DisplayName annotation helps in
+        identifying the name of the test method.
+
+    ii. @Disable: This annotation helps in Test Driven Development when Test method is created first and then development of the method took place.
+        During the development when Test method does not let the build work, Developer can disabled the test method using @Disabled annotation.
+
+
+    iii. @TestInstance(TestInstance.Lifecycle.PER_METHOD)
+         public class MathUtilTest(){
+         ....
+         ....
+         }
+
+         @TestInstance annotation provide instance of the class. I can define the life cycle Per method OR per class.
+         i. PER_METHOD : creates a new instance of the class for each method.
+         ii. PER_ClASS : creates a single instance of the class for all the methods.
+
+===================================================================================================================
+===================================================================================================================
+
+**** CONDITIONAL TESTING:
+
+1. Many cases it is required that if condition is tru then only run the test. For eg: if the server is up then only run the test, otherwise test fails
+    as the server is down.
+2. To achieve this by using "assumeTrue(condition/boolean)" method.
+
+For eg: Run the testCalcCircleArea() method only if the circleArea is positive ( greater than zero).
+
+     @Test
+        void testCalcCircleArea(){
+            //MathUtils utils = new MathUtils();
+
+            double expectedArea = 314.0;
+            double actual = utils.calcCircleArea(10);
+
+            boolean flag = false;
+            if(actual<0) {
+                flag = true;
+            }
+            assumeTrue(flag);   //Conditional Testing. If the assumption is wrong then test would be terminated.
+
+            assertEquals(expectedArea,actual,"The area of the circle should match");
+        }
+
+3. As per the code, I created a boolean flag variable. flag var is true only if calculated circle area is positive.
+4. I put assumption that if flag is true then run the test. If flag is false then compiler won't run the test and terminated this test with below error.
+
+        org.opentest4j.TestAbortedException: Assumption failed: assumption is not true
+
