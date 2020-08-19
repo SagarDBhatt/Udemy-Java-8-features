@@ -195,8 +195,26 @@ For Eg:
 
         @Test
         void add() {
-           //MathUtils mathUtils = new MathUtils();
            int actual = utils.add(1,1);
            int expected = 2;
           assertEquals(expected,actual,"The add method should add two numbers");
         }
+
+**** MIMP ::
+
+1. @BeforeAll method executes even before the instance of the class initialize. This leads to an issue.
+For Eg:     I created a method which simply print a message. This method annotated with @BeforeAll annotation.
+
+            @BeforeAll
+            void beforeAllInit(){
+                System.out.println("This is before all method");
+            }
+
+2. I got the error = "org.junit.platform.commons.JUnitException: @BeforeAll method 'void section4_Junit5.MathUtilsTest.beforeAllInit()' must be static unless the test class is annotated with @TestInstance(Lifecycle.PER_CLASS)."
+3. This error message says, @BeforeAll method should be static i.e. This method does not depend on the class instance to run. So I need to make @BeforeAll method
+    static in order for the method to run.
+
+                    @BeforeAll
+                    static void beforeAllInit(){
+                        System.out.println("This is before all method");
+                    }

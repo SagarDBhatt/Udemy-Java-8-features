@@ -1,5 +1,6 @@
 package section4_Junit5;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -9,6 +10,11 @@ class MathUtilsTest {
 
     MathUtils utils;
 
+    @BeforeAll
+    static void beforeAllInit(){
+        System.out.println("This is before all method");
+    }
+    
     @BeforeEach
     void init(){
         utils = new MathUtils();
