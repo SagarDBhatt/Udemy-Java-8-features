@@ -13,7 +13,18 @@ Junit 5 architecture:
 
 ==> Maven Depenedency: To Run Jupiter, Dev require two depenedencies.
     1. junit-jupiter-engine
-    2. junit-jupiter-api
+    2. junit-jupiter-api (platform - surefire provider)
+
+            <dependency>
+                <groupId>org.junit.platform</groupId>
+                <artifactId>junit-platform-surefire-provider</artifactId>
+                <version>1.0.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-engine</artifactId>
+                <version>5.0.1</version>
+            </dependency>
 
 ==> Inside the property, dev define a variable for jupiter version.
     The value of this tag <junit.jupiter.version> is used inside the dependency.
@@ -47,9 +58,80 @@ Junit 5 architecture:
 
             @Test
             void add() {
+                System.out.println("This test run");
             }
         }
 
 --> @Test : 1. Tell IDE this is Test method. As the test class doesn't have Main method,
             IDE start execution from @Test annotation.
             2. Tell Junit test engine this method needs to test.
+
+===================================================================================================================
+
+**** CREATE TEST METHOD AND RUN:
+
+1. Generate Test method (Alt + Insert -> Test...), Select class MathUtils and the method which I want to Test. In my case it is Add().
+2. This will automatically create an class "MathUtilTest" in "Src/Test/Java" package with method annotated as @Test.
+    class MathUtilsTest {
+        @Test
+        void add() {
+        }
+    }
+
+3. Execution of this class is started from @Test annotation. All the methods with @Test annotation will be executed.
+4. Now, basic concept to test any method is to verify if for specific value, will this method generate expected output.
+
+5. Basic flow to test Add() is to pass two values and store the result in variable. validate the value of the variable is same as expected.
+
+    @Test
+    void add() {
+       MathUtils mathUtils = new MathUtils();
+       int actual = mathUtils.add(1,1);
+       int expected = 2;
+
+       if (actual == expected)
+           System.out.println("This test passed!!");
+    }
+
+6. To print "Test passed" for all the Tests should be very difficult for a huge code base.
+    Another way is to use "assertEquals(expected,actual)".
+
+7. I can put the message in "assertEquals" method as a third argument. This will be helpful for a large code base to identify
+    which method fails.
+
+    assertEquals(expected,actual,"The add method should add two numbers");
+
+===================================================================================================================
+===================================================================================================================
+
+**** TEST DRIVER DEVELOPMENT:
+
+1. In TDD approach, I need to built the test method first and then I need to start developing my actual code.
+2. I need to develop the code till the test successfully passed.
+3. Advantage of this approach is when I get an user case, I develop the test first. This time all the test fails as I have not developed
+    any code. Now, I need to start developing my code till my test case pass.
+
+4. I need to test a method which calculate the area of circle. First let me develop the test method "testCalcCircleArea".
+
+        @Test
+        void testCalcCircleArea(){
+            MathUtils utils = new MathUtils();
+
+            double expectedArea = 314.0;
+            double actual = utils.calcCircleArea(10);
+            assertEquals(expectedArea,actual,"The area of the circle should match");
+        }
+
+5. I created the signature of the method but did not build any code inside.
+
+        public double calcCircleArea(double radius){
+            return 0;
+        }
+
+6. Now, the test case fails as the return value is 0. I need to keep building/editing the code until the test case passes.
+
+        public double calcCircleArea(double radius){
+            return 3.14 * radius * radius;
+        }
+
+7. Above code runs fine and my test method passed successfully.

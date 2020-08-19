@@ -8,7 +8,21 @@ class MathUtilsTest {
 
     @Test
     void add() {
-        assertEquals(2,MathUtils.add(1,1));
-        System.out.println("This is test!");
+       MathUtils mathUtils = new MathUtils();
+       int actual = mathUtils.add(1,1);
+       int expected = 2;
+
+      /* if (actual == expected)
+           System.out.println("This test passed!!");*/
+      assertEquals(expected,actual,"The add method should add two numbers");
+    }
+
+    @Test
+    void testCalcCircleArea(){
+        MathUtils utils = new MathUtils();
+
+        double expectedArea = 314.0;
+        double actual = utils.calcCircleArea(10);
+        assertEquals(expectedArea,actual,"The area of the circle should match");
     }
 }
