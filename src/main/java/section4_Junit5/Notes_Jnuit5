@@ -273,6 +273,8 @@ For eg: Run the testCalcCircleArea() method only if the circleArea is positive (
 ===================================================================================================================
 
 **** ASSERTALL() :
+
+
 1. Usually there are couple of test cases to check while testing a method.
 2. For eg: method divide(a,b) should be checked on different values of a and b. Few ex sets are {2,1}, {5,9}, {-3,4}, {5,0}.
 3. To validate each of the value set we need to user assertEqual method and pass expected and actual value.
@@ -292,7 +294,7 @@ For eg:
 5. To write multiple lines of assertEquals method is cumbersome. I can write a single method which can test all the scenarios.
 6. This can be achieved by using "assertAll()". Here, I use lambda expression to pass each assert statement separately.
     This is AND condition, so if all the assert statements pass then only this @Test method passed.
-    
+
 
 For eg:
 
@@ -305,3 +307,41 @@ For eg:
                         () -> assertEquals(0, utils.divide(2,6))
                 );
             }
+
+===================================================================================================================
+===================================================================================================================
+
+**** @Nested :
+1. There are different use cases / scenarios to test the single method.
+2. For eg. To test Add() method, various scenarios could be i. add two positive numbers, ii. add two negative numbers, iii. add postive and negative numbers.
+3. To create a separate method for each individual use cases/scenarios would be difficult to identify in large code base.
+4. One of the solution is to group all the use cases/scenario for a single method into one group. This way it would be easier to identify which method to
+    test and for which scenarios to test.
+
+5. To achieve this, create a class inside the Test class and put all the scenario methods inside the class. Annotate this class with @Nested annotation.
+This will create a group of test cases and it would be easier to manage.
+
+For Eg:
+
+      @Nested
+          class TestAddMethod{
+
+              @Test
+              void testAddPositiveNumbers() {
+                  //MathUtils mathUtils = new MathUtils();
+                  int actual = utils.add(1,1);
+                  int expected = 2;
+                  assertEquals(expected,actual,"The add method should add two numbers");
+              }
+
+              @Test
+              void testAddNegativeNumbers() {
+                  //MathUtils mathUtils = new MathUtils();
+                  int actual = utils.add(-1,-1);
+                  int expected = -2;
+                  assertEquals(expected,actual,"The add method should add two numbers");
+              }
+
+          }
+
+6. Created a class in the main "MathUtilsTest" class and put the different scenario testing methods inside. This will group all the methods inside the class.

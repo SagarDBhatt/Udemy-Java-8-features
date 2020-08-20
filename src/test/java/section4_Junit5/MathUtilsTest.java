@@ -1,9 +1,6 @@
 package section4_Junit5;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
@@ -56,4 +53,28 @@ class MathUtilsTest {
                 () -> assertEquals(0, utils.divide(2,6))
         );
     }
+
+//1. create a nested class to group test cases:
+
+    @Nested
+    class TestAddMethod{
+
+        @Test
+        void testAddPositiveNumbers() {
+            //MathUtils mathUtils = new MathUtils();
+            int actual = utils.add(1,1);
+            int expected = 2;
+            assertEquals(expected,actual,"The add method should add two numbers");
+        }
+
+        @Test
+        void testAddNegativeNumbers() {
+            //MathUtils mathUtils = new MathUtils();
+            int actual = utils.add(-1,-1);
+            int expected = -2;
+            assertEquals(expected,actual,"The add method should add two numbers");
+        }
+
+    }
+
 }
