@@ -269,3 +269,39 @@ For eg: Run the testCalcCircleArea() method only if the circleArea is positive (
 
         org.opentest4j.TestAbortedException: Assumption failed: assumption is not true
 
+===================================================================================================================
+===================================================================================================================
+
+**** ASSERTALL() :
+1. Usually there are couple of test cases to check while testing a method.
+2. For eg: method divide(a,b) should be checked on different values of a and b. Few ex sets are {2,1}, {5,9}, {-3,4}, {5,0}.
+3. To validate each of the value set we need to user assertEqual method and pass expected and actual value.
+
+For eg:
+
+         @Test
+            void testDivide(){
+                //MathUtils utils = new MathUtils();
+                assertThrows(ArithmeticException.class, () -> utils.divide(1,0),"Divide by zero");
+                assertThrows(ArithmeticException.class, () -> utils.divide(5,9),"Denominator is larger");
+                assertThrows(ArithmeticException.class, () -> utils.divide(-3,6),"Divide negative number");
+                assertThrows(ArithmeticException.class, () -> utils.divide(200,-4),"Divide by negative number");
+            }
+
+4. If the method pass all the assertEquals method then only I can say that Test method is passed.
+5. To write multiple lines of assertEquals method is cumbersome. I can write a single method which can test all the scenarios.
+6. This can be achieved by using "assertAll()". Here, I use lambda expression to pass each assert statement separately.
+    This is AND condition, so if all the assert statements pass then only this @Test method passed.
+    
+
+For eg:
+
+            @Test
+            void testDivide(){
+                //assertThrows(ArithmeticException.class, () -> utils.divide(1,0),"Divide by zero");
+                assertAll(
+                        () -> assertThrows(ArithmeticException.class, () -> utils.divide(1,0),"Divide by zero"),
+                        () -> assertEquals(5,utils.divide(5,1)),
+                        () -> assertEquals(0, utils.divide(2,6))
+                );
+            }

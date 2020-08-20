@@ -49,7 +49,11 @@ class MathUtilsTest {
 
     @Test
     void testDivide(){
-        //MathUtils utils = new MathUtils();
-        assertThrows(ArithmeticException.class, () -> utils.divide(1,0),"Divide by zero");
+        //assertThrows(ArithmeticException.class, () -> utils.divide(1,0),"Divide by zero");
+        assertAll(
+                () -> assertThrows(ArithmeticException.class, () -> utils.divide(1,0),"Divide by zero"),
+                () -> assertEquals(5,utils.divide(5,1)),
+                () -> assertEquals(0, utils.divide(2,6))
+        );
     }
 }
