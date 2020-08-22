@@ -345,3 +345,10 @@ For Eg:
           }
 
 6. Created a class in the main "MathUtilsTest" class and put the different scenario testing methods inside. This will group all the methods inside the class.
+
+===================================================================================================================
+===================================================================================================================
+
+**** REPEATEDTEST(NUMBER) :
+**** Tag() :
+TestReport, TestInfo.
