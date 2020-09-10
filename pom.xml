@@ -7,16 +7,36 @@
     <groupId>com.onslearning.Java8Concepts</groupId>
     <artifactId>Java 8 Concepts</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <!-- <java.version>1.8</java.version> -->
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+
+        <!-- This is the variable where we define the version for J unit.
+        This variable should be use within dependency block. See Junit-jupiter-engine dependency  -->
+        <junit.jupiter.version>5.4.0</junit.jupiter.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>commons-collections</groupId>
             <artifactId>commons-collections</artifactId>
             <version>3.2.2</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-surefire-provider</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.0.1</version>
+        </dependency>
+
     </dependencies>
 
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
 
 </project>

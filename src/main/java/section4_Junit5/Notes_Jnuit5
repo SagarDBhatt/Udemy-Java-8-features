@@ -1,0 +1,354 @@
+********************************************************
+                        ONSJHJSA
+********************************************************
+
+Junit 5 architecture:
+
+==> Junit 5 has two mandatory packages to run Junits.
+1. Platform: This is base to run different tests i.e. Test engine
+2. API packages: There are 3 types.
+    i. Jupiter: API to run test cases.
+    ii. Vintage: API to support older versions of Jnit.
+    iii. Extention Library: Dev create own extention using 3rd party library to create API.
+
+==> Maven Depenedency: To Run Jupiter, Dev require two depenedencies.
+    1. junit-jupiter-engine
+    2. junit-jupiter-api (platform - surefire provider)
+
+            <dependency>
+                <groupId>org.junit.platform</groupId>
+                <artifactId>junit-platform-surefire-provider</artifactId>
+                <version>1.0.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-engine</artifactId>
+                <version>5.0.1</version>
+            </dependency>
+
+==> Inside the property, dev define a variable for jupiter version.
+    The value of this tag <junit.jupiter.version> is used inside the dependency.
+
+     <properties>
+            <!-- This is the variable where we define the version for J unit.
+            This variable should be use within dependency block. See Junit-jupiter-engine dependency  -->
+
+            <junit.jupiter.version>5.4.0</junit.jupiter.version>
+        </properties>
+
+==> As seen below, Sysntax to use variable is "${ }".
+
+     <dependency>
+               <groupId>org.junit.jupiter</groupId>
+               <artifactId>junit-jupiter-engine</artifactId>
+               <version>${junit.jupiter.version}</version>
+               <scope>test</scope>
+     </dependency>
+=============================================================================================
+
+         HOW TO CREATE JUNIT TEST CASE:
+
+-> Simple method is to create a "Test class" and define method. In Maven projects path should be in "src/test/java".
+-> Use IDE support: Right click in class -> Generate -> Test.
+        -> This will create a separate class with test method in Java.
+
+==> Below is the auto generated Test class with name: MathUtilsTest.java
+
+        class MathUtilsTest {
+
+            @Test
+            void add() {
+                System.out.println("This test run");
+            }
+        }
+
+--> @Test : 1. Tell IDE this is Test method. As the test class doesn't have Main method,
+            IDE start execution from @Test annotation.
+            2. Tell Junit test engine this method needs to test.
+
+===================================================================================================================
+
+**** CREATE TEST METHOD AND RUN:
+
+1. Generate Test method (Alt + Insert -> Test...), Select class MathUtils and the method which I want to Test. In my case it is Add().
+2. This will automatically create an class "MathUtilTest" in "Src/Test/Java" package with method annotated as @Test.
+    class MathUtilsTest {
+        @Test
+        void add() {
+        }
+    }
+
+3. Execution of this class is started from @Test annotation. All the methods with @Test annotation will be executed.
+4. Now, basic concept to test any method is to verify if for specific value, will this method generate expected output.
+
+5. Basic flow to test Add() is to pass two values and store the result in variable. validate the value of the variable is same as expected.
+
+    @Test
+    void add() {
+       MathUtils mathUtils = new MathUtils();
+       int actual = mathUtils.add(1,1);
+       int expected = 2;
+
+       if (actual == expected)
+           System.out.println("This test passed!!");
+    }
+
+6. To print "Test passed" for all the Tests should be very difficult for a huge code base.
+    Another way is to use "assertEquals(expected,actual)".
+
+7. I can put the message in "assertEquals" method as a third argument. This will be helpful for a large code base to identify
+    which method fails.
+
+    assertEquals(expected,actual,"The add method should add two numbers");
+
+===================================================================================================================
+===================================================================================================================
+
+**** TEST DRIVER DEVELOPMENT:
+
+1. In TDD approach, I need to built the test method first and then I need to start developing my actual code.
+2. I need to develop the code till the test successfully passed.
+3. Advantage of this approach is when I get an user case, I develop the test first. This time all the test fails as I have not developed
+    any code. Now, I need to start developing my code till my test case pass.
+
+4. I need to test a method which calculate the area of circle. First let me develop the test method "testCalcCircleArea".
+
+        @Test
+        void testCalcCircleArea(){
+            MathUtils utils = new MathUtils();
+
+            double expectedArea = 314.0;
+            double actual = utils.calcCircleArea(10);
+            assertEquals(expectedArea,actual,"The area of the circle should match");
+        }
+
+5. I created the signature of the method but did not build any code inside.
+
+        public double calcCircleArea(double radius){
+            return 0;
+        }
+
+6. Now, the test case fails as the return value is 0. I need to keep building/editing the code until the test case passes.
+
+        public double calcCircleArea(double radius){
+            return 3.14 * radius * radius;
+        }
+
+7. Above code runs fine and my test method passed successfully.
+
+===================================================================================================================
+===================================================================================================================
+
+**** TEST IF METHOD THROWS VALID EXCEPTION:
+
+1. Developer needs to verify that the method is throwing the valid exception.
+2. I created a method divide(int a, int b). This method divide a by b. If the b = 0 then method should throw airthematic exception.
+
+        public double divide(int a, int b){
+            return a/b;
+        }
+
+3. Now, create a test method and check if the method is throwing valid exception or not. "assertThrows" is a method to check if the thrown exception
+    is same as expected exception.
+
+        @Test
+        void testDivide(){
+            MathUtils utils = new MathUtils();
+            assertThrows(ArithmeticException.class, () -> utils.divide(1,0),"Divide by zero");
+        }
+
+4. assertThrow method has 2 args. first one need to specify the expected exception. In our case "ArithematicException.class".
+    second arg required executables and this can be provided using lambda expression.
+
+        () -> utils.divide(1,0);
+
+===================================================================================================================
+===================================================================================================================
+
+**** TEST LIFECYCLE ANNOTATIONS:
+1. There are 4 annotations which Jnuit 5 framework provides along with @Test annotation.
+
+    i. @BeforeAll : The method annoated with @BeforeAll executed at the beginning of the execution starts. This is the first method executed
+                    before any other methods starts.
+
+    ii. @BeforeEach : The method annotated with @BeforeEach annotation executes before each @Test method execution.
+
+    iii. @AfterEach : The method annotated with @AfterEach annotation executes after each @Test method execution. [if there are 5 @Test method then
+                        @AfterEach method executed 5 times after each @Test method executed. ]
+
+    iv. @AfterAll: The method executed just one time after all the @Test methods executed.
+
+==> Use of these annotations:
+
+1. As I can see from the @Test method, I need to create an object of "MathUtils class" for each @Test method. This is a repetitive code
+    which is not memory efficient.
+2. Solution is, I can initialize MathUtil class object in a method annotated with @BeforeEach annotation. This will provide new object to
+    each @Test method.
+For Eg:
+
+    MathUtils utils;
+
+        @BeforeEach
+        void init(){
+            utils = new MathUtils();
+        }
+
+        @Test
+        void add() {
+           int actual = utils.add(1,1);
+           int expected = 2;
+          assertEquals(expected,actual,"The add method should add two numbers");
+        }
+
+**** MIMP ::
+
+1. @BeforeAll method executes even before the instance of the class initialize. This leads to an issue.
+For Eg:     I created a method which simply print a message. This method annotated with @BeforeAll annotation.
+
+            @BeforeAll
+            void beforeAllInit(){
+                System.out.println("This is before all method");
+            }
+
+2. I got the error = "org.junit.platform.commons.JUnitException: @BeforeAll method 'void section4_Junit5.MathUtilsTest.beforeAllInit()' must be static unless the test class is annotated with @TestInstance(Lifecycle.PER_CLASS)."
+3. This error message says, @BeforeAll method should be static i.e. This method does not depend on the class instance to run. So I need to make @BeforeAll method
+    static in order for the method to run.
+
+                    @BeforeAll
+                    static void beforeAllInit(){
+                        System.out.println("This is before all method");
+                    }
+
+**** Other Userful annotations :
+    i. @DispayName("Name of the Test Method") : This annotation is useful when there are so many Test methods. @DisplayName annotation helps in
+        identifying the name of the test method.
+
+    ii. @Disable: This annotation helps in Test Driven Development when Test method is created first and then development of the method took place.
+        During the development when Test method does not let the build work, Developer can disabled the test method using @Disabled annotation.
+
+
+    iii. @TestInstance(TestInstance.Lifecycle.PER_METHOD)
+         public class MathUtilTest(){
+         ....
+         ....
+         }
+
+         @TestInstance annotation provide instance of the class. I can define the life cycle Per method OR per class.
+         i. PER_METHOD : creates a new instance of the class for each method.
+         ii. PER_ClASS : creates a single instance of the class for all the methods.
+
+===================================================================================================================
+===================================================================================================================
+
+**** CONDITIONAL TESTING:
+
+1. Many cases it is required that if condition is tru then only run the test. For eg: if the server is up then only run the test, otherwise test fails
+    as the server is down.
+2. To achieve this by using "assumeTrue(condition/boolean)" method.
+
+For eg: Run the testCalcCircleArea() method only if the circleArea is positive ( greater than zero).
+
+     @Test
+        void testCalcCircleArea(){
+            //MathUtils utils = new MathUtils();
+
+            double expectedArea = 314.0;
+            double actual = utils.calcCircleArea(10);
+
+            boolean flag = false;
+            if(actual<0) {
+                flag = true;
+            }
+            assumeTrue(flag);   //Conditional Testing. If the assumption is wrong then test would be terminated.
+
+            assertEquals(expectedArea,actual,"The area of the circle should match");
+        }
+
+3. As per the code, I created a boolean flag variable. flag var is true only if calculated circle area is positive.
+4. I put assumption that if flag is true then run the test. If flag is false then compiler won't run the test and terminated this test with below error.
+
+        org.opentest4j.TestAbortedException: Assumption failed: assumption is not true
+
+===================================================================================================================
+===================================================================================================================
+
+**** ASSERTALL() :
+
+
+1. Usually there are couple of test cases to check while testing a method.
+2. For eg: method divide(a,b) should be checked on different values of a and b. Few ex sets are {2,1}, {5,9}, {-3,4}, {5,0}.
+3. To validate each of the value set we need to user assertEqual method and pass expected and actual value.
+
+For eg:
+
+         @Test
+            void testDivide(){
+                //MathUtils utils = new MathUtils();
+                assertThrows(ArithmeticException.class, () -> utils.divide(1,0),"Divide by zero");
+                assertThrows(ArithmeticException.class, () -> utils.divide(5,9),"Denominator is larger");
+                assertThrows(ArithmeticException.class, () -> utils.divide(-3,6),"Divide negative number");
+                assertThrows(ArithmeticException.class, () -> utils.divide(200,-4),"Divide by negative number");
+            }
+
+4. If the method pass all the assertEquals method then only I can say that Test method is passed.
+5. To write multiple lines of assertEquals method is cumbersome. I can write a single method which can test all the scenarios.
+6. This can be achieved by using "assertAll()". Here, I use lambda expression to pass each assert statement separately.
+    This is AND condition, so if all the assert statements pass then only this @Test method passed.
+
+
+For eg:
+
+            @Test
+            void testDivide(){
+                //assertThrows(ArithmeticException.class, () -> utils.divide(1,0),"Divide by zero");
+                assertAll(
+                        () -> assertThrows(ArithmeticException.class, () -> utils.divide(1,0),"Divide by zero"),
+                        () -> assertEquals(5,utils.divide(5,1)),
+                        () -> assertEquals(0, utils.divide(2,6))
+                );
+            }
+
+===================================================================================================================
+===================================================================================================================
+
+**** @Nested :
+1. There are different use cases / scenarios to test the single method.
+2. For eg. To test Add() method, various scenarios could be i. add two positive numbers, ii. add two negative numbers, iii. add postive and negative numbers.
+3. To create a separate method for each individual use cases/scenarios would be difficult to identify in large code base.
+4. One of the solution is to group all the use cases/scenario for a single method into one group. This way it would be easier to identify which method to
+    test and for which scenarios to test.
+
+5. To achieve this, create a class inside the Test class and put all the scenario methods inside the class. Annotate this class with @Nested annotation.
+This will create a group of test cases and it would be easier to manage.
+
+For Eg:
+
+      @Nested
+          class TestAddMethod{
+
+              @Test
+              void testAddPositiveNumbers() {
+                  //MathUtils mathUtils = new MathUtils();
+                  int actual = utils.add(1,1);
+                  int expected = 2;
+                  assertEquals(expected,actual,"The add method should add two numbers");
+              }
+
+              @Test
+              void testAddNegativeNumbers() {
+                  //MathUtils mathUtils = new MathUtils();
+                  int actual = utils.add(-1,-1);
+                  int expected = -2;
+                  assertEquals(expected,actual,"The add method should add two numbers");
+              }
+
+          }
+
+6. Created a class in the main "MathUtilsTest" class and put the different scenario testing methods inside. This will group all the methods inside the class.
+
+===================================================================================================================
+===================================================================================================================
+
+**** REPEATEDTEST(NUMBER) :
+**** Tag() :
+TestReport, TestInfo.

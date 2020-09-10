@@ -1,0 +1,231 @@
+**************************************************
+                    ONSJHJSA
+                OM NAMH SHIVAY!!!
+**************************************************
+
+Lambda Expression:
+
+-> It provides a clear & consise way to define single method interface.
+==> Interface which has only one ABSTRACT method is called "FunctionalInterface".
+    [ABSTRACT method : one which does not have implementation. Class that implement interface should define the method.]
+    [Note : Interface can have more than one default method i.e method which has default implementation.]
+
+For Eg:
+    Interface draw(){
+        void shape();
+    }
+
+--> Interface "draw()" has a single ABSTRACT method shape() which needs to define by implemented class.
+    This is called FunctionInterface.
+--> "@FunctionalInterface" annotation can be used to define an Interface as FunctionInterface. This is optional.
+
+==> FunctionalInterface can have a default implemented method (Java 8 feature) But it should have only one Abstract method.
+
+For Eg:
+    @FunctionalInterface    //Optional
+    Interface draw(){
+        void shape();
+
+        default void color(){
+            System.out.println("Interface with a default method");
+        }
+    }
+
+==========================================================================================
+SYNTAX FOR LAMBDA EXPRESSION:
+
+    (ARGUMENT LIST) -> { BODY }
+
+1) Argument-list: It can be empty or non-empty as well.
+
+2) Arrow-token: It is used to link arguments-list and body of expression.
+
+3) Body: It contains expressions and statements for lambda expression.
+
+===========================================================================
+
+IMPLEMENTATION OF LAMBDA EXPRESSION:
+
+        @FunctionalInterface
+        public interface functionalInterfce {
+            void draw();
+        }
+
+1.WITHOUT USING LAMBDA EXPRESSION:
+
+        public class Demo {
+
+            public static void main(String[] args) {
+
+                functionalInterfce interfceObject = new functionalInterfce() {
+                    @Override
+                    public void draw() {
+                        System.out.println("Draw method without using lambda expression.");
+                    }
+                }; // this is imp. Need ";" at the end of the implementation.
+                interfceObject.draw();      //calling draw()
+            }
+        }
+
+2. SAME METHOD IMPLEMENTATION USING LAMBDA EXPRESSION:
+
+        public class Demo {
+
+            public static void main(String[] args) {
+
+                // WITHOUT LAMBDA EXP
+                functionalInterfce interfceObject = new functionalInterfce() {
+                    @Override
+                    public void draw() {
+                        System.out.println("Draw method without using lambda expression.");
+                    }
+                };
+                interfceObject.draw();      //calling draw()
+
+                functionalInterfce interfceObject2 = () -> {
+                    System.out.println("Draw method implementation using Lambda Expression!");
+                };
+                interfceObject2.draw();     //calling draw()
+
+
+            }
+        }
+
+
+===> O/P:::
+
+        Draw method without using lambda expression.
+        Draw method implementation using Lambda Expression!
+
+===========================================================================
+
+ONE ARGUMENTED FUNCTIONAL INTERFACE WITH LAMBDA EXP:
+
+    @FunctionalInterface
+    public interface oneArgumentFunctInterface {
+        void printNumber(int a);
+    }
+
+//IMPLEMENTATION WITHIN CLASS
+
+    oneArgumentFunctInterface argObject = (x) -> {
+                System.out.println("Value to print == " + x);
+    };
+    argObject.printNumber(10);
+
+===========================================================================
+
+==> FUNCTIONAL INTERFACE WITH MULTIPLE ARGS & RETURN TYPE:
+
+        @FunctionalInterface
+        public interface multiArgsFuncInterface {
+            double multiply(double a, double b);
+        }
+
+//IMPLEMENTATION:
+
+        multiArgsFuncInterface mulObject = (a,b) -> {
+            System.out.println("This is multi-line, multi-args and return type lambda expression");
+            return a*b;
+        };
+
+        System.out.println(mulObject.multiply(12,5));
+
+O/P::
+        This is multi-line, multi-args and return type lambda expression
+        60.0
+
+==================================================================================================================================
+==================================================================================================================================
+        LAMBDA EXPRESSION TO CREAT THREAD
+
+--> Lambda expression is used to implement functional interface.
+--> System defined functional Interfaces are : Runnable and Comparable.
+--> Runnable interface has single abstract method - "run()". run() is used in multithreading programming.
+
+==> Implementation of thread and Runnable interface without lambda expression.
+
+        Runnable runnableObj1 = new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("Thread 1 is running!");
+            }
+        };
+
+        Thread threadObj1 = new Thread(runnableObj1);
+        threadObj1.start();
+
+==> USE LAMBDA EXPRESSION TO CREAT THREAD.
+
+      Runnable runobj2 = () -> {
+                 System.out.println("Thread 2 using Lambda is running.");
+      };
+
+      Thread thread2 = new Thread(runobj2);
+      thread2.start();
+
+==========================================================================================
+
+LAMBDA EXPRESSION TO IMPLEMENT COMPARATOR INTERFACE.
+
+--> Create a class Employee with private fields, constructor and getter setters. Create List interface and add
+objects of Employee class in ArrayList.
+
+Eg:
+     //============ USE COMPARATOR INTERFACE TO SORT OBJECTS BASED ON FIELD.
+            Employee emp = new Employee(1,1000,"Robert",8.5);
+            Employee emp2 = new Employee(2,5000,"Patrick",10.5);
+            Employee emp3 = new Employee(3,8000,"Dan",11.5);
+            Employee emp4 = new Employee(4,4800,"Elizabeth",8.0);
+
+            List<Employee> employeeList = new ArrayList<Employee>();
+            employeeList.add(emp);
+            employeeList.add(emp2);
+            employeeList.add(emp3);
+            employeeList.add(emp4);
+
+--> Now, CAN NOT USE COLLECTION.SORT FOR EMPLOYEE LIST - NEED TO SPECIFY SORTING BASED ON WHICH FIELD.
+            //Collections.sort(employeeList);
+
+--> Implement Comparator interface without using Lambda Expression.
+
+     System.out.println("Sorting based on employee name");
+            Collections.sort(employeeList, new Comparator<Employee>() {
+                @Override
+                public int compare(Employee o1, Employee o2) {
+                    return o1.getName().compareTo(o2.getName());
+                }
+            });
+
+            for(Employee obj : employeeList){
+                System.out.println(obj.toString());
+            }
+
+O/P:
+    Sorting based on employee name
+    Employee{id=3, salary=8000, name='Dan', hoursWorked=11.5}
+    Employee{id=4, salary=4800, name='Elizabeth', hoursWorked=8.0}
+    Employee{id=2, salary=5000, name='Patrick', hoursWorked=10.5}
+    Employee{id=1, salary=1000, name='Robert', hoursWorked=8.5}
+    Sort Employee List based on Employee Workhours
+
+==> Now use Lambda Expression to sort the employee List.
+
+       Collections.sort(employeeList, (e1, e2) -> {
+          if(e1.getSalary() >= e2.getSalary())
+              return 1;
+          else
+              return -1;
+       });
+        for(Employee e: employeeList)
+            System.out.println("With lambda exp = "+e);
+
+
+
+
+
+
+
+
+
+
